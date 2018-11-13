@@ -1214,7 +1214,7 @@
       <column comment="" defaultValue="0" key="false" length="18" name="CXLMTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="''" key="false" length="2000" name="CXCUEX" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+      <column comment="" defaultValue="''" key="false" length="2000" name="CXCUEX" nullable="true" pattern="" precision="0" sourceType="NCHAR" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
@@ -1260,7 +1260,7 @@
         <mapperTableEntries expression="row3.CXCHNO " name="CXCHNO" type="id_BigDecimal"/>
         <mapperTableEntries expression="row3.CXCHID " name="CXCHID" type="id_String"/>
         <mapperTableEntries expression="row3.CXLMTS " name="CXLMTS" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row3.CXCUEX " name="CXCUEX" type="id_String"/>
+        <mapperTableEntries expression="row3.CXCUEX " name="CXCUEX" nullable="true" type="id_Long"/>
         <mapperTableEntries expression="row3.TALEND_CDC_TYPE " name="TALEND_CDC_TYPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.TALEND_CDC_CREATION_DATE " name="TALEND_CDC_CREATION_DATE" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row3.TALEND_CDC_MEMBER " name="TALEND_CDC_MEMBER" nullable="true" type="id_String"/>
@@ -1657,7 +1657,7 @@
       <column comment="" defaultValue="0" key="false" length="18" name="CXLMTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="''" key="false" length="2000" name="CXCUEX" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+      <column comment="" defaultValue="''" key="false" length="2000" name="CXCUEX" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -1770,7 +1770,7 @@
       <column comment="" defaultValue="0" key="false" length="18" name="CXLMTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="''" key="false" length="2000" name="CXCUEX" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+      <column comment="" defaultValue="''" key="false" length="2000" name="CXCUEX" nullable="true" pattern="" precision="0" sourceType="NUMBER" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -3566,13 +3566,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1503ff66-1a7d-418a-bac3-bef0559d7972"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>q1TMZqaYoI3g8IE78yzVu2HSeY2EeAxcXYxccpT+aPL3W9pG19YZryItF8yMakyyYh8GeLbaCA6h
-nyJffJbkQQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_40fae84e-48c5-495b-bbce-95f93101bfea"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>0g8kmI2UzUGZO0Yce90YxvKG1LvMAhdE6qyBpIFFElFQR4GWSVX7VZVVP1LDJOCUS6DfkCPloY1j
-9pYcGdpuLA==</DigestValue></Reference></SignedInfo><SignatureValue>CUhGT/DyOxGfPlagpyRDpNQHEEhZiSUGM32VZbneQ3mE4yemnEJjzy3ZfrQbSzTdjIrePV9Bn2+Y
-620wOCQcg4+QvdD0tQb/mfLdw1KigbO1uIitMI6eexNEwlxSSqOEa+mEN2wcBaw1wbI4fr6PScE8
-gxBjv+h76dbB6VVgQAde/+qSEbYeXyTYtqBKVcvjfWT5GhNCfAu1dRo8OhSsQXB8D3n5IkVYA1Z6
-mmsxnafcYnEsVmNMKztymKleZHcPuc9lz1Oq1eT1NdtBA7br66sAY4/1nGSjt9B+3V8B+F2UrSt8
-vtrpzAVJZybt8itSZeUjEez9jqt0ODkPCcQ29w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_44a47b52-1eab-4513-b748-3306a2cb3b32"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TkjcUbfNKATcfOkpe2sHi/dM+DOuaFy52RTvDGz6334jQ7Ht1Cs3Bu5mJnRplbTE+OyIfPq5ajuU
+aYwWDBCvoA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fff985c3-1b87-43b2-bbc4-7a3c6f6d836f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>K5Qa8fx9avDHxtj73eZSmfEm6uhFk1vVKaicnUNt4D0+35ukhKUeR7qYZMzrQ6antwkC9jiSIrRA
+6tDv+NaVJw==</DigestValue></Reference></SignedInfo><SignatureValue>Cl+6cCAER5EcpXnqLuUsIoLJeGX8hh0bNMMS5FiekL2auPyUZVOyZlycr+Szws7IzHbv2sJpNSKo
+gE3MAzLghqS6Q6O9oxzbg2uabvZPdVKoj00d8ic0Ccqx8EzLUaylzp9GD19P4bg9qQWxvZhwGD60
+wtlnEY5IPEBiz8sb2ngDHN/qtoO7/+zxiVhykwNkGXRvxDu/Q0DP/3llACEMdFLyt6cL/rW8pmou
+lCo0kWTN+JIaV1YsUaZOZ11Pqa3BUZwDll5Up5yqUBwc9mSo87fR7m7Zhz7uDyx+84SZnvSgoBU4
+Rv5WmPMKEW5yLYf2NfywuDW+GaHaxSZh5shO2Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -3596,4 +3596,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_40fae84e-48c5-495b-bbce-95f93101bfea" Target="#_1503ff66-1a7d-418a-bac3-bef0559d7972"><Timestamp>2018-11-13 12:15:58</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fff985c3-1b87-43b2-bbc4-7a3c6f6d836f" Target="#_44a47b52-1eab-4513-b748-3306a2cb3b32"><Timestamp>2018-11-13 12:25:48</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
