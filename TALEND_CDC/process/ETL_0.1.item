@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default"/>
   <parameters>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="129"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="96"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
@@ -1948,6 +1948,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CVLMTS"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CVCUEX"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="TALEND_CDC_TYPE"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="TALEND_CDC_CREATION_DATE"/>
@@ -2183,6 +2185,7 @@
       <column comment="" defaultValue="0" key="false" length="18" name="CVLMTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="20000" name="CVCUEX" nullable="false" originalLength="20000" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="false" length="11" name="TALEND_CDC_CREATION_DATE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
       <column key="false" length="10" name="TALEND_CDC_MEMBER" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
@@ -2428,6 +2431,7 @@
       <column comment="" defaultValue="0" key="false" length="18" name="CVLMTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="2000" name="CVCUEX" nullable="false" originalLength="2000" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="false" length="11" name="TALEND_CDC_CREATION_DATE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
       <column key="false" length="10" name="TALEND_CDC_MEMBER" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
@@ -2510,6 +2514,7 @@
         <mapperTableEntries expression="row4.CVCHNO " name="CVCHNO" type="id_BigDecimal"/>
         <mapperTableEntries expression="row4.CVCHID " name="CVCHID" type="id_String"/>
         <mapperTableEntries expression="row4.CVLMTS " name="CVLMTS" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row4.CVCUEX " name="CVCUEX" type="id_String"/>
         <mapperTableEntries expression="row4.TALEND_CDC_TYPE " name="TALEND_CDC_TYPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row4.TALEND_CDC_CREATION_DATE " name="TALEND_CDC_CREATION_DATE" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row4.TALEND_CDC_MEMBER " name="TALEND_CDC_MEMBER" nullable="true" type="id_String"/>
@@ -2589,6 +2594,7 @@
         <mapperTableEntries name="CVCHNO" type="id_BigDecimal"/>
         <mapperTableEntries name="CVCHID" type="id_String"/>
         <mapperTableEntries name="CVLMTS" type="id_BigDecimal"/>
+        <mapperTableEntries name="CVCUEX" type="id_String"/>
         <mapperTableEntries name="TALEND_CDC_TYPE" nullable="true" type="id_String"/>
         <mapperTableEntries name="TALEND_CDC_CREATION_DATE" nullable="true" type="id_Date"/>
         <mapperTableEntries name="TALEND_CDC_MEMBER" nullable="true" type="id_String"/>
@@ -3000,6 +3006,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CVCUEX"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="TALEND_CDC_TYPE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -3251,6 +3262,7 @@
       <column comment="" defaultValue="0" key="false" length="18" name="CVLMTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="2000" name="CVCUEX" nullable="false" originalLength="2000" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="11" name="TALEND_CDC_CREATION_DATE" nullable="true" originalLength="-1" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
       <column key="false" length="10" name="TALEND_CDC_MEMBER" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -3478,6 +3490,7 @@
       <column comment="" defaultValue="0" key="false" length="18" name="CVLMTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="2000" name="CVCUEX" nullable="false" originalLength="2000" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="11" name="TALEND_CDC_CREATION_DATE" nullable="true" originalLength="-1" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
       <column key="false" length="10" name="TALEND_CDC_MEMBER" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -3520,10 +3533,20 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="CAEXEL"/>
   </connection>
   <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tDBCDC_4" offsetLabelX="0" offsetLabelY="0" source="tDBCDC_4" target="tMap_4">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="CVCUEX"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
   </connection>
   <connection connectorName="FLOW" label="CASTDV" lineStyle="0" metaname="CASTDV" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tDBOutput_12">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="CVCUEX"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="CASTDV"/>
   </connection>
@@ -3547,13 +3570,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c2493c2c-fcbc-4ade-b7ea-96327300a8bb"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>W+q7110+adPE+I/6x6Ikbn2yQIYf1ACsudrn3EbsoFdPRAOHibCIJ2XwP3rphgPCnT+nXIUQk2v6
-6/hGUTUlVg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d67fa9d2-134b-41b4-a819-0af77bb9ce74"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>tHn83ifhfDHXxS91+J4L3PCa7zNTTH1LvXTZK2SJOjGsqpEZ4mSVq46ZEbOWXPu2ZWmgDsRIJS6n
-zj2tecUGmg==</DigestValue></Reference></SignedInfo><SignatureValue>OhRXspV5vBnCQeoa5sQjxhywQ99XhvAaOVgWbTvzJ64zSKu3ildZmJ+hXp/zpB6vmiZKRpyzF/R2
-r1Hpgju8p+s36fxXaBvCVSxAa5HzNf27vZO3k50Bv/DajaODZ9OGEOQmcP/HTR2F7CBEV5JoogKz
-dgj/k4fxTCHTN0V5sKl1pFYKyRQz+cIqszwVYpEtvM9FbZtOejj8Cf8jU2tDiLt5S0j5AnxsWrv7
-Cga5vnmWdFAMRsSNCp77Feyz6kw/44xT1I9JT9SiGydfJJNMZGays42dDbPuAqqsER86HMDqCWuK
-tImNSwl3KEbRcAu+U7IDv5IhvKPae8Sc45Gkfw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_52df938b-c5e9-4b7c-bde6-f993de695a14"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lUE59trxfa2K0YCtOadysPYnjK7D1Yt5QSAYUO7YD64dsBgymk8xAmBIBKCoePp71NYM+xmZzJQy
+3FTn6YC+DQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_63999e03-bf9c-40ee-baea-61174111da6f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>UoKAp6HmoAoqx+fg//rRKeXq8qN7sdXKFUk48uRQ45JSvIqb9nPVvnavA9bhgU/RMIl5k3nZRpq4
+RTBsilY2qQ==</DigestValue></Reference></SignedInfo><SignatureValue>NzpPap1Ko8nh+V2fSZNJtasIsTx4EJdz6XshTKZFe4PHtT9k/XHpxLfv9v5Tubt6NSMlnaJF4Taf
+1rsXve45WhXlV5Xtns66UJCL0RdFYGSXJmt/iidGzN1D6oit0UdiQ7X6gDTaNZYb/Sb5wl0Qcv5f
+BmF72ahmdpo2S0mybbbORKHL0B6QRmmu/annt1LtoMB3wY1ck9FmRC3Su0Hk4TFL3MSc+eybwE4F
+mrT+wy/T8/fvKpadfJUS7vnEh0YFxblQ8JmaW/mWdzeVVQgvgfHy0c1SBJfQtQORBD7n/E190u/4
+vGehwrSepqvDfCxa1TQPjs3i/lFXGvb9dNZplg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -3577,4 +3600,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d67fa9d2-134b-41b4-a819-0af77bb9ce74" Target="#_c2493c2c-fcbc-4ade-b7ea-96327300a8bb"><Timestamp>2018-11-14 04:13:35</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_63999e03-bf9c-40ee-baea-61174111da6f" Target="#_52df938b-c5e9-4b7c-bde6-f993de695a14"><Timestamp>2018-11-14 04:15:37</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
