@@ -987,7 +987,7 @@
     <elementParameter field="TEXT" name="USER" value="&quot;etldump&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="MU4o14/72+SDdjsjJKRZfw=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;CBANAC&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
@@ -3121,7 +3121,7 @@
       <column comment="" defaultValue="0" key="false" length="18" name="BKLMTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="''" key="false" length="2000" name="BKCUEX" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_Long" usefulColumn="true">
+      <column comment="" defaultValue="''" key="false" length="2000" name="BKCUEX" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" defaultValue="''" key="false" length="7" name="BKFRCO" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
@@ -3330,7 +3330,7 @@
       <column comment="" defaultValue="0" key="false" length="18" name="BKLMTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="''" key="false" length="2000" name="BKCUEX" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_Long" usefulColumn="true">
+      <column comment="" defaultValue="''" key="false" length="2000" name="BKCUEX" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_Character" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" defaultValue="''" key="false" length="7" name="BKFRCO" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
@@ -3404,7 +3404,7 @@
         <mapperTableEntries expression="row3.BKCHNO " name="BKCHNO" type="id_BigDecimal"/>
         <mapperTableEntries expression="row3.BKCHID " name="BKCHID" type="id_String"/>
         <mapperTableEntries expression="row3.BKLMTS " name="BKLMTS" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row3.BKCUEX " name="BKCUEX" type="id_Long"/>
+        <mapperTableEntries expression="row3.BKCUEX " name="BKCUEX" type="id_Character"/>
         <mapperTableEntries expression="row3.BKFRCO " name="BKFRCO" type="id_String"/>
         <mapperTableEntries expression="row3.TALEND_CDC_TYPE " name="TALEND_CDC_TYPE" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.TALEND_CDC_CREATION_DATE " name="TALEND_CDC_CREATION_DATE" nullable="true" type="id_Date"/>
@@ -3471,7 +3471,7 @@
         <mapperTableEntries name="BKCHNO" type="id_BigDecimal"/>
         <mapperTableEntries name="BKCHID" type="id_String"/>
         <mapperTableEntries name="BKLMTS" type="id_BigDecimal"/>
-        <mapperTableEntries name="BKCUEX" type="id_Long"/>
+        <mapperTableEntries name="BKCUEX" type="id_String"/>
         <mapperTableEntries name="BKFRCO" type="id_String"/>
         <mapperTableEntries name="TALEND_CDC_TYPE" nullable="true" type="id_String"/>
         <mapperTableEntries name="TALEND_CDC_CREATION_DATE" nullable="true" type="id_Date"/>
@@ -4033,7 +4033,7 @@
       <column comment="" defaultValue="0" key="false" length="18" name="BKLMTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="''" key="false" length="2000" name="BKCUEX" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_Long" usefulColumn="true">
+      <column comment="" defaultValue="''" key="false" length="2000" name="BKCUEX" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_Character" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" defaultValue="''" key="false" length="7" name="BKFRCO" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
@@ -4224,7 +4224,7 @@
       <column comment="" defaultValue="0" key="false" length="18" name="BKLMTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="''" key="false" length="2000" name="BKCUEX" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_Long" usefulColumn="true">
+      <column comment="" defaultValue="''" key="false" length="2000" name="BKCUEX" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_Character" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" defaultValue="''" key="false" length="7" name="BKFRCO" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
@@ -4276,13 +4276,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_56fee756-2a55-4cce-a698-bf5fb9f53d22"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3bsxCpqtgCQEnsPQ1eW4x6APBVch+ZRerQEeAB/1wzLn4Hticd8/CmpGzS7gZ3zMJPaGVrrTIQCq
-phwlclsweg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_cb110c02-801c-4d72-a47e-dfd9eab71da2"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nMek9EODGNWe7GCPkT5kivkL1+nTXokYbwFBmmoGPu9WJreMSIRNhVjsoeS7gGNea5XrdnWz89VQ
-Ajs+Hv91mQ==</DigestValue></Reference></SignedInfo><SignatureValue>3jmclYZabmZ9XK76nJ+7WRq+4a8DIXbV1Lu6GVfsizf/VvB4Y8R7RrY220k87kKyg9eceyR183Aj
-K5K7KVC5z5eKdYxdprw8dTWS+aW9qR7h3Dmg1Xo7IJv2XI05hDjqcWkMfm2cdzmMKSaNW5Y8Fmkz
-4VMMswJbqnPG94SKdaAQJoXIbOHtr7J27fVTlP3zd3hVKIwGIf50APHUFLUumE/e3c/rv/29yUwE
-mAX5yeubhOsrVEKrRe0VDpumIu1wjAXDrgFh/usXogBggJPXjNXFt1SJziNJSwSQ40bpxYqNlFc4
-nfgOmstMNK6kh8kALOnljUBzPRisD6jj5Yez3w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_cf754f21-375f-43f8-916e-fe8280cb2e92"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Wm5VNad5y9HCTJZAF80mdpXC7tOs2b25a/X38RSv1mZAyIOr+UN6m7mBoGjw3ofbhYFs2H/IWWJ6
+w01SGxw8ug==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5307245d-ad4e-40f8-af68-2bc8a2be8aaa"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MYwhnob1muNp9rQhxEDZxBnIh0A6YjZ1Dx4uMhoWOCqJ8fYMDZy9qICzauCwrw7Km2XXasg5ZvBw
+aL532FWXbw==</DigestValue></Reference></SignedInfo><SignatureValue>QatiW72geTLdVkCuPxlDD6I+Fw8x4L+371QKwU+j4Pt3lrnGXyqI9SwvoyYbNhPBRoEJYsjwD3X4
+17VXY5cJxqnV5P231Zg54A4w4FzWz1HzFAKzQ6aEXchFlsc2SHJOlz+TjUq1bulC4YCZmq15Ei1C
+g64q7IPOofWwtK4mVjjvZ61+xnbo2amOrBBAhsZDI+YiFlxWlSeZCRyO1Te1Ho9cSy5rS3RJydVJ
+HvgwmVGuk5Iffko/+NRuGlHiS6rXGiZxgU6LXEvx6YQ1rodC74rUTS9ZR0wzzOfJi+NFKm0nx9XT
+snwn7JU6QThYZYY6pcs/5a5KMVj1wCEgYYnrKQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -4306,4 +4306,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_cb110c02-801c-4d72-a47e-dfd9eab71da2" Target="#_56fee756-2a55-4cce-a698-bf5fb9f53d22"><Timestamp>2018-11-14 05:54:53</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5307245d-ad4e-40f8-af68-2bc8a2be8aaa" Target="#_cf754f21-375f-43f8-916e-fe8280cb2e92"><Timestamp>2018-11-14 05:57:39</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
