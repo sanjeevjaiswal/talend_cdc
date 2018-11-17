@@ -643,15 +643,15 @@
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="MCHEAD" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.KOCONO " name="KOCONO" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row1.KOFACI " name="KOFACI" type="id_String"/>
+        <mapperTableEntries expression="(StringHandling.LEN(StringHandling.TRIM(row1.KOFACI)))==0&#13;&#10;||StringHandling.TRIM(row1.KOFACI)==&quot;&quot;&#13;&#10;||StringHandling.TRIM(row1.KOFACI)==null&#13;&#10;?&quot;999&quot;:row1.KOFACI " name="KOFACI" type="id_String"/>
         <mapperTableEntries expression="row1.KOITNO " name="KOITNO" type="id_String"/>
-        <mapperTableEntries expression="row1.KOSTRT " name="KOSTRT" type="id_String"/>
-        <mapperTableEntries expression="row1.KOVASE " name="KOVASE" type="id_String"/>
+        <mapperTableEntries expression="(StringHandling.LEN(StringHandling.TRIM(row1.KOSTRT)))==0&#13;&#10;||StringHandling.TRIM(row1.KOSTRT)==&quot;&quot;&#13;&#10;||StringHandling.TRIM(row1.KOSTRT)==null&#13;&#10;?&quot;999&quot;:row1.KOSTRT " name="KOSTRT" type="id_String"/>
+        <mapperTableEntries expression="(StringHandling.LEN(StringHandling.TRIM(row1.KOVASE)))==0&#13;&#10;||StringHandling.TRIM(row1.KOVASE)==&quot;&quot;&#13;&#10;||StringHandling.TRIM(row1.KOVASE)==null&#13;&#10;?&quot;999&quot;:row1.KOVASE " name="KOVASE" type="id_String"/>
         <mapperTableEntries expression="row1.KOCROC " name="KOCROC" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row1.KORORN " name="KORORN" type="id_String"/>
+        <mapperTableEntries expression="(StringHandling.LEN(StringHandling.TRIM(row1.KORORN)))==0&#13;&#10;||StringHandling.TRIM(row1.KORORN)==&quot;&quot;&#13;&#10;||StringHandling.TRIM(row1.KORORN)==null&#13;&#10;?&quot;999&quot;:row1.KORORN " name="KORORN" type="id_String"/>
         <mapperTableEntries expression="row1.KORORL " name="KORORL" type="id_BigDecimal"/>
         <mapperTableEntries expression="row1.KOECVS " name="KOECVS" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row1.KOSMFN " name="KOSMFN" type="id_String"/>
+        <mapperTableEntries expression="(StringHandling.LEN(StringHandling.TRIM(row1.KOSMFN)))==0&#13;&#10;||StringHandling.TRIM(row1.KOSMFN)==&quot;&quot;&#13;&#10;||StringHandling.TRIM(row1.KOSMFN)==null&#13;&#10;?&quot;999&quot;:row1.KOSMFN " name="KOSMFN" type="id_String"/>
         <mapperTableEntries expression="row1.KOPCTP " name="KOPCTP" type="id_String"/>
         <mapperTableEntries expression="row1.KOPCDT " name="KOPCDT" type="id_BigDecimal"/>
         <mapperTableEntries expression="row1.KOCSU1 " name="KOCSU1" type="id_BigDecimal"/>
@@ -1498,13 +1498,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fdf61fd7-60c0-4de8-9a44-ea1bb417828c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>IMbf/19DN0xajHlWV0BU91rgyL8O6PXQLxqSCuEOWDR1DtN40Ff+/fH9Q1D+2IFpmGsTJE3QoS0d
-FMuXIncTww==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5a87f325-6307-41a5-831f-616f20f723d5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>I9StcqOK/WgpjFM/gBzoYnyRk6pO3EAQqmlrSJSJEgQMHHcwglJ8z9QawqYk/CQ4Lhya1coqc6R6
-2DhdK3EiRg==</DigestValue></Reference></SignedInfo><SignatureValue>NJCnh0czzj9em5xf9kxw6pflbVjSnB6sPxkD/XYfkfnP0a5aRjXPIFW92+mfkWHU3Aa0BkPukNLk
-CE8F8EXQxRbSL69NzB0ZWMzAUpoAomnwHgmax2P3OFvUb8q9qu6EoEmpimgZwEkl8zub+8IO13Gt
-FTLv0alymSccvXMFtVsEK5kLkQvBwJy5WtbQ0Lf7ISbPpVlxHVOpaJYUcPHtojKL4Y/zKHetS3yt
-42Nw+9j9mGK0en6foa8Mu8JpC3PosQX7/fLmelJcmft5ydx1Br1eZSg3OB+Egb7OQ68zvXnpwkb2
-ScAQAA4ftltfp63cidd4ho9ssoHtscKS9+4JCg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_24ef4c83-054f-47eb-bd8a-aa5ab74eda66"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pIuxHZzjhiS0zwOvoghKBOOOY+rK1+NVURgFtzUyUn90YKmylgfKgJ7L/VBsgSWQge8Jxqa5P0q7
+Y71c1rdKCQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_32887a2c-7cdc-4289-b25d-616568a4284c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>i4cgFYXM5S5Bgtz+W5jEI8wsi0HjwWwAwmqlW8sL7ToVlKmwGZOjo/vNqCa4uvto5C5ZF1LZ3QZT
+F3LdTo4Kgg==</DigestValue></Reference></SignedInfo><SignatureValue>hWsDXystY0TLhUUVP8WrwyIHeDHCM4TRYSfayw4iLZ3Xyvid6e1qDrJl3pHO256L/MU3a6NE0lR0
+HGbVyO6yeeDvj/iFo87pBsGLszh9D4BHohhmEdKtBiNVDtbVhAzc/fPAzGpcr/e74F/FTT7PWtW8
+/MVZN1ZcnLoPIi+IVUHauFCqq+WMGNo14UCA04ymyqLbawGyyQzLUSJ7nQnOrE4xKoaKTOnHSNSF
+Vg+FCvX3WKWwcUjZH9chTEHd2KWqNgUdavp1MXT77QRKXFeqVvSLahaCxaZf4VMHxnw0e4ZQn1k0
+tPr9d6VKFpnZ/5+D1say4foH6c9LFImvRQ5VZQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1528,4 +1528,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5a87f325-6307-41a5-831f-616f20f723d5" Target="#_fdf61fd7-60c0-4de8-9a44-ea1bb417828c"><Timestamp>2018-11-17 06:26:35</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_32887a2c-7cdc-4289-b25d-616568a4284c" Target="#_24ef4c83-054f-47eb-bd8a-aa5ab74eda66"><Timestamp>2018-11-17 06:31:08</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
