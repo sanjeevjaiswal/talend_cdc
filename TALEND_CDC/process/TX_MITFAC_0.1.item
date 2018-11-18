@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default"/>
   <parameters>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
@@ -104,13 +106,904 @@
     <routinesParameter id="_coR5gOcpEeiiipAD292gug" name="TalendStringUtil"/>
     <routinesParameter id="_coIIiucpEeiiipAD292gug" name="TalendString"/>
   </parameters>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d78d7998-c4ee-441d-94d6-c34a60e9bc58"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hRBLMerqUd3uVh66JvwDFuBnlHFKHWbX+P3H9/uB59F+uI0l+JpnCbRmakO860EHxVTZ3F9tqp3a
-WUXiuXxAEA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_9e59f61f-1040-4568-8367-1db395b42391"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/k/C9WrxhE07MBWtSREXngwL2yNc9G5351WlUUYRQI3SavDNiO33HyJB4aBHF05+ui61hX78E6Ix
-AYiKKb5tpw==</DigestValue></Reference></SignedInfo><SignatureValue>2t76c4SV6XpcqXoL+jB9LVlQEX1CvzxJ1usL4I/eznr1oO/IAijvNRggAn0wlYSadkENUM6iCaz8
-r1wIRBkSKy1AynmDCLiailsYs1W4tB48AfmwF2OqZKuQ05nb9Nd0IlKZASssutIBEkWNPhOzwPCe
-Orpp9LQMj0b8cmsA/SUNJaqTZFeWPVQ5y6CmxpNDp2Drb5DQRZYwxpMxyAC0UJ0YHxOr74h3awWW
-l5wYIY5J/x+VtNtS9xQLHEUqImhdINoQmMGo7xcp9gy0zYVvPuOyo+E3eAfW0cmGVytfZ4t4vubx
-pPGlep4VJEqNLonY9NYD1w6vfIFdbFxJBOQtdg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+  <node componentName="tAS400CDC" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCDC_1"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_sURJ4OcsEeiiipAD292gug"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="jt400_V6R1.jar"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;172.17.3.115&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;CDCPROD&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="AS400"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;qsecofr&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="psWCM2kG9zpu3JDzFwDNAQ=="/>
+    <elementParameter field="TEXT" name="SOURCE_LIB" value="&quot;M3FDBPRD&quot;"/>
+    <elementParameter field="DBTABLE" name="DATATABLE" value="&quot;MITFAC&quot;"/>
+    <elementParameter field="TEXT" name="SUSCRIBER" value="&quot;APP1&quot;"/>
+    <elementParameter field="LABEL" name="EVENTS_TYPE" value=""/>
+    <elementParameter field="CHECK" name="EVENTS_TYPE_INSERT" value="true"/>
+    <elementParameter field="CHECK" name="EVENTS_TYPE_UPDATE" value="true"/>
+    <elementParameter field="CHECK" name="EVENTS_TYPE_DELETE" value="true"/>
+    <elementParameter field="TEXT" name="MEMBER" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;prompt=false&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="PROCESS_ALL_DATA" value="false"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="Only works with only one subscriber, will get all members, and type of changes."/>
+    <elementParameter field="CHECK" name="KEEP_CDC_DATAS" value="false"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CONO"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9FACI"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9ITNO"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9LEA4"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CSNO"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9SPFA"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9ORCO"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9APPR"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9UCOS"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9SOCO"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9EXPC"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9BQTY"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9BQTM"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9LLCM"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9DLET"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9DLEF"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9DIDY"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9DIDF"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9PRRA"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9TRHC"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9MARC"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9JITF"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9REWH"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9OPFQ"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9FANO"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9FANQ"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9FANR"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9FATM"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9WCLN"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9EDEC"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9AUGE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9ECCC"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9ECAR"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CPRI"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CPRE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9WSCA"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9PRCM"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9PLAP"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9PLUP"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9SCMO"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CPL0"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CPL1"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CPL2"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9PPL0"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9PPL1"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9PPL2"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9TXID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9DTID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CPDC"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9COCD"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9EVGR"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9VAMT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9LAMA"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9GRTI"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9MOLL"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9RGDT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9RGTM"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9LMDT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CHNO"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CHID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9LMTS"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CRTM"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9DICM"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9ACRF"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9ECVE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9ATTC"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9ATNR"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9STCW"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9QUCW"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9RJCW"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CAWC"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9COFA"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9CUEX"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="M9ALTS"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TALEND_CDC_TYPE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TALEND_CDC_CREATION_DATE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TALEND_CDC_MEMBER"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="DISABLE_FTP_CALL" value="false"/>
+    <elementParameter field="CHECK" name="CUSTOMISE_FTP_COMMAND" value="false"/>
+    <elementParameter field="TABLE" name="FTP_COMMANDS" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__DATATABLE__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="MITFAC" name="tDBCDC_1">
+      <column comment="" defaultValue="0" key="true" length="3" name="M9CONO" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="true" length="3" name="M9FACI" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="true" length="15" name="M9ITNO" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="3" name="M9LEA4" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="16" name="M9CSNO" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="15" name="M9SPFA" nullable="false" pattern="" precision="9" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="M9ORCO" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="17" name="M9APPR" nullable="false" pattern="" precision="6" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="17" name="M9UCOS" nullable="false" pattern="" precision="6" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="17" name="M9SOCO" nullable="false" pattern="" precision="6" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="5" name="M9EXPC" nullable="false" pattern="" precision="2" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="15" name="M9BQTY" nullable="false" pattern="" precision="6" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9BQTM" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="2" name="M9LLCM" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9DLET" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="3" name="M9DLEF" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9DIDY" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="3" name="M9DIDF" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9PRRA" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="5" name="M9TRHC" nullable="false" pattern="" precision="2" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9MARC" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9JITF" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="M9REWH" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="15" name="M9OPFQ" nullable="false" pattern="" precision="6" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="15" name="M9FANO" nullable="false" pattern="" precision="6" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="15" name="M9FANQ" nullable="false" pattern="" precision="6" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="15" name="M9FANR" nullable="false" pattern="" precision="6" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9FATM" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="8" name="M9WCLN" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="2" name="M9EDEC" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9AUGE" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="4" name="M9ECCC" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="2" name="M9ECAR" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="5" name="M9CPRI" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="5" name="M9CPRE" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="6" name="M9WSCA" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="6" name="M9PRCM" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="15" name="M9PLAP" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="15" name="M9PLUP" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="6" name="M9SCMO" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9CPL0" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9CPL1" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9CPL2" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9PPL0" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9PPL1" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9PPL2" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="13" name="M9TXID" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="13" name="M9DTID" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9CPDC" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="5" name="M9COCD" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="2" name="M9EVGR" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9VAMT" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="5" name="M9LAMA" nullable="false" pattern="" precision="2" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="10" name="M9GRTI" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="5" name="M9MOLL" nullable="false" pattern="" precision="2" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="M9RGDT" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="6" name="M9RGTM" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="M9LMDT" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="3" name="M9CHNO" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="10" name="M9CHID" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="18" name="M9LMTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9CRTM" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="6" name="M9DICM" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="8" name="M9ACRF" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="4" name="M9ECVE" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9ATTC" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="17" name="M9ATNR" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="15" name="M9STCW" nullable="false" pattern="" precision="6" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="15" name="M9QUCW" nullable="false" pattern="" precision="6" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="15" name="M9RJCW" nullable="false" pattern="" precision="6" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9CAWC" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="15" name="M9COFA" nullable="false" pattern="" precision="9" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="2000" name="M9CUEX" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="M9ALTS" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="" key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="11" name="TALEND_CDC_CREATION_DATE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="10" name="TALEND_CDC_MEMBER" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <additionalProperties key="SYSTEM_TABLE_NAME" value="MITFAC"/>
+      <additionalProperties key="TABLE_SCHEMA" value="M3FDBPRD"/>
+      <additionalProperties key="SYSTEM_TABLE_SCHEMA" value="M3FDBPRD"/>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="256" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_IL9UoOtuEeiYUOUhHVfVFw-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="CCURRA" name="STG_MITFAC">
+      <column comment="" defaultValue="0" key="false" length="3" name="CUCONO" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="CUDIVI" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="CUGLOC" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="CUCUCD" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="2" name="CUCRTP" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="CUCUTD" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="11" name="CUARAT" nullable="false" pattern="" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="13" name="CUTXID" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="CULOCD" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="CUDMCU" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="CURAFA" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="CURGDT" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="6" name="CURGTM" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="CULMDT" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="3" name="CUCHNO" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="10" name="CUCHID" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="18" name="CULMTS" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="7" name="TALEND_CDC_CREATION_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TALEND_CDC_MEMBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="STG_MITFAC" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="CUCONO" type="id_BigDecimal"/>
+        <mapperTableEntries name="CUDIVI" type="id_String"/>
+        <mapperTableEntries name="CUGLOC" type="id_String"/>
+        <mapperTableEntries name="CUCUCD" type="id_String"/>
+        <mapperTableEntries name="CUCRTP" type="id_BigDecimal"/>
+        <mapperTableEntries name="CUCUTD" type="id_BigDecimal"/>
+        <mapperTableEntries name="CUARAT" type="id_BigDecimal"/>
+        <mapperTableEntries name="CUTXID" type="id_BigDecimal"/>
+        <mapperTableEntries name="CULOCD" type="id_String"/>
+        <mapperTableEntries name="CUDMCU" type="id_BigDecimal"/>
+        <mapperTableEntries name="CURAFA" type="id_BigDecimal"/>
+        <mapperTableEntries name="CURGDT" type="id_BigDecimal"/>
+        <mapperTableEntries name="CURGTM" type="id_BigDecimal"/>
+        <mapperTableEntries name="CULMDT" type="id_BigDecimal"/>
+        <mapperTableEntries name="CUCHNO" type="id_BigDecimal"/>
+        <mapperTableEntries name="CUCHID" type="id_String"/>
+        <mapperTableEntries name="CULMTS" type="id_BigDecimal"/>
+        <mapperTableEntries name="TALEND_CDC_TYPE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="TALEND_CDC_CREATION_DATE" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="TALEND_CDC_MEMBER" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="M9CONO" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9FACI" type="id_String"/>
+        <mapperTableEntries name="M9ITNO" type="id_String"/>
+        <mapperTableEntries name="M9LEA4" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9CSNO" type="id_String"/>
+        <mapperTableEntries name="M9SPFA" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9ORCO" type="id_String"/>
+        <mapperTableEntries name="M9APPR" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9UCOS" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9SOCO" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9EXPC" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9BQTY" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9BQTM" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9LLCM" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9DLET" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9DLEF" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9DIDY" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9DIDF" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9PRRA" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9TRHC" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9MARC" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9JITF" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9REWH" type="id_String"/>
+        <mapperTableEntries name="M9OPFQ" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9FANO" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9FANQ" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9FANR" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9FATM" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9WCLN" type="id_String"/>
+        <mapperTableEntries name="M9EDEC" type="id_String"/>
+        <mapperTableEntries name="M9AUGE" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9ECCC" type="id_String"/>
+        <mapperTableEntries name="M9ECAR" type="id_String"/>
+        <mapperTableEntries name="M9CPRI" type="id_String"/>
+        <mapperTableEntries name="M9CPRE" type="id_String"/>
+        <mapperTableEntries name="M9WSCA" type="id_String"/>
+        <mapperTableEntries name="M9PRCM" type="id_String"/>
+        <mapperTableEntries name="M9PLAP" type="id_String"/>
+        <mapperTableEntries name="M9PLUP" type="id_String"/>
+        <mapperTableEntries name="M9SCMO" type="id_String"/>
+        <mapperTableEntries name="M9CPL0" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9CPL1" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9CPL2" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9PPL0" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9PPL1" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9PPL2" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9TXID" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9DTID" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9CPDC" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9COCD" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9EVGR" type="id_String"/>
+        <mapperTableEntries name="M9VAMT" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9LAMA" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9GRTI" type="id_String"/>
+        <mapperTableEntries name="M9MOLL" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9RGDT" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9RGTM" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9LMDT" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9CHNO" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9CHID" type="id_String"/>
+        <mapperTableEntries name="M9LMTS" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9CRTM" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9DICM" type="id_String"/>
+        <mapperTableEntries name="M9ACRF" type="id_String"/>
+        <mapperTableEntries name="M9ECVE" type="id_String"/>
+        <mapperTableEntries name="M9ATTC" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9ATNR" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9STCW" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9QUCW" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9RJCW" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9CAWC" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9COFA" type="id_BigDecimal"/>
+        <mapperTableEntries name="M9CUEX" type="id_String"/>
+        <mapperTableEntries name="M9ALTS" type="id_BigDecimal"/>
+        <mapperTableEntries name="TALEND_CDC_TYPE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="TALEND_CDC_CREATION_DATE" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="TALEND_CDC_MEMBER" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_3"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_g0gz8OcqEeiiipAD292gug"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_SID"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_12"/>
+    <elementParameter field="TEXT" name="RAC_URL" show="false" value="&quot;172.17.3.120&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;172.17.3.120&quot;"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;1521&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SID"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;reportdb&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;reportdb&quot;"/>
+    <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;ETLDUMP&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;etldump&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="MU4o14/72+SDdjsjJKRZfw=="/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;CCURRA&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" show="false" value="_g0gz8OcqEeiiipAD292gug - CCURRA"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="oracle_id"/>
+    <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="CUCONO"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CUDIVI"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CUGLOC"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CUCUCD"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CUCRTP"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CUCUTD"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CUARAT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CUTXID"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CULOCD"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CUDMCU"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CURAFA"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CURGDT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CURGTM"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CULMDT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CUCHNO"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CUCHID"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CULMTS"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TALEND_CDC_TYPE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TALEND_CDC_CREATION_DATE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TALEND_CDC_MEMBER"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
+    <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" show="false" value="false"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
+    <elementParameter field="CHECK" name="USE_TIMESTAMP_FOR_DATE_TYPE" value="true"/>
+    <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
+    <elementParameter field="TEXT" name="LABEL" value="ETL_DUMP"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="CCURRA" name="tDBOutput_3">
+      <column comment="" defaultValue="0" key="false" length="3" name="CUCONO" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="CUDIVI" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="CUGLOC" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="CUCUCD" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="2" name="CUCRTP" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="CUCUTD" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="11" name="CUARAT" nullable="false" pattern="" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="13" name="CUTXID" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="CULOCD" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="CUDMCU" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="CURAFA" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="CURGDT" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="6" name="CURGTM" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="CULMDT" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="3" name="CUCHNO" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="10" name="CUCHID" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="18" name="CULMTS" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="7" name="TALEND_CDC_CREATION_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TALEND_CDC_MEMBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+    <metadata connector="REJECT" label="CCURRA" name="REJECT">
+      <column comment="" defaultValue="0" key="false" length="3" name="CUCONO" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="CUDIVI" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="CUGLOC" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="CUCUCD" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="2" name="CUCRTP" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="CUCUTD" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="11" name="CUARAT" nullable="false" pattern="" precision="6" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="13" name="CUTXID" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="3" name="CULOCD" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="CUDMCU" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="1" name="CURAFA" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="CURGDT" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="6" name="CURGTM" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="8" name="CULMDT" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="3" name="CUCHNO" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="''" key="false" length="10" name="CUCHID" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" defaultValue="0" key="false" length="18" name="CULMTS" nullable="false" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="7" name="TALEND_CDC_CREATION_DATE" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="TALEND_CDC_MEMBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBCDC_1" offsetLabelX="0" offsetLabelY="0" source="tDBCDC_1" target="tMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="FLOW" label="STG_MITFAC" lineStyle="0" metaname="STG_MITFAC" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_3">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="STG_MITFAC"/>
+  </connection>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCDC_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_cd45afdf-eeac-417e-8518-8af2a893353b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>1rlcGHNfxg098D5A9YIFpkuaW3uB+6cl1ZCaeTmpG9CV3PcWyAkNu7bIIoGcZJYC4YV6tcwql1yH
+5MV7CAqKMA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_cc889e91-fc59-47ed-ab0c-e30f83bddad1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3LyPEjROvs17myDi8n21DJDPUuk3vZDCj60nPagk9BnBrt57jigp1mYqhzXE9FsIXmhzhy6A9IIx
+vSK1Z76jxQ==</DigestValue></Reference></SignedInfo><SignatureValue>Ov188kfxQP6HxfhRUXzzFif30oFr3U6RICBWvwJ710i9eO2hRzCSxgiRsFJU5aZucdEruzgUkRHN
+jXfde3y8mUTtkd1CyvlzYBt3G6dl1Hu9czX26UcNklECFciZdiEKNAj6ZSQW9Jw0ik2RJb55zZfM
+RdeqWw8AQe8ZYilWO7Y4rjfchAPSbpByPfueYzCo+kaZqQIlbHm3qvoNcIisHRgOXb5tK75g0O7u
+WBBdQrJL+uAtgGgZXs0boHUlq5dH5e62xByF4xC+PXCo7MIIrwp/XlB4IG9a2vo1BqbLyY1nDyaU
+CnliX4LFfy3QAzBH2xSw6CnV0GiXZd/wJotnNQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -134,4 +1027,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_9e59f61f-1040-4568-8367-1db395b42391" Target="#_d78d7998-c4ee-441d-94d6-c34a60e9bc58"><Timestamp>2018-11-18 20:11:26</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_cc889e91-fc59-47ed-ab0c-e30f83bddad1" Target="#_cd45afdf-eeac-417e-8518-8af2a893353b"><Timestamp>2018-11-18 20:13:20</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
