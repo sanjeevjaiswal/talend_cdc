@@ -2158,7 +2158,7 @@
     <metadata connector="FLOW" label="AuditLog" name="copyOfAudit_Log">
       <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="true" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="true" length="0" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="true" length="0" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
@@ -2168,7 +2168,7 @@
       <outputTables name="copyOfAudit_Log" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row7.DataMart_TableName " name="DataMart_TableName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row7.Job_Name " name="Job_Name" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="TalendDate.getCurrentDate() " name="Date" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="TalendDate.getCurrentDate() " name="Date" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="context.Fetched_rows " name="No_of_Records_fetched" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="" name="No_of_Distinct_Records" nullable="true" type="id_Integer"/>
       </outputTables>
@@ -2230,7 +2230,7 @@
     <metadata connector="FLOW" label="AuditLog" name="tFileOutputExcel_3">
       <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="true" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="true" length="0" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="true" length="0" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
@@ -3189,13 +3189,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="79;198;255"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9dbd1e41-101c-4708-8e82-b937da94ba14"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>6LQGBHQv2PV93G00WEviS/gjRqKidK17PQrd3TG751XggiTKTeI6qkpAHACPIrTeF4r/vsmdz00M
-BNX4capJ+Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_82e9b01a-2eb1-4870-af26-47dd4c158e07"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lmRfcsZX9egmpaFyodmrzYVm1jiNMWhpxzxFbAmLB8GAmYyg8F9/qPxVNiZfGae6j9SPuXjLOesO
-ZD56ErS0Yg==</DigestValue></Reference></SignedInfo><SignatureValue>ue+8EOJ+sUMmeW1ias09UaF1+rtpJX0ymvOda/RcN8/ARDxyZdnJ/Zc4ciWncom1bKZRVpq/GIkY
-310B83hE9cRuMTtYT/+BCOnTdtd+Z7Vj7qEdJDGjQeK240Oh2nJxLH97nBDXXh4ZD7iRPaUIKa08
-3O2WCO3v1fkIiiwgLgyUZLIn4oKx8FYY1bX/2cjq4Dj56ELy+m+IHiG1d3lMsarxeL3iAmrE82Wh
-eHkXxVrFt99ymVLPMISXm/H8/k45rMwJUYmcCUBtsQ10qP3hvH5eMdHEc1kOXZFuXIQYmnn6KtFf
-nXCjJwmGV0BLL+p4OpDdgQxczJzJvbXAVLCoMA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_708b2a48-ed9b-445f-97d2-4763398e53f2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>XRbcL+YVJ1lENxyqt4D1Bc9lXSEhG7Wzei1XYDeL+ipkRLzsIybnALnOCpK7wHeEBgZqaQVsXztt
+GVoaaoXCxg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c23da454-6d16-468d-9a2d-aef22b123b65"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vsryohvumZANlWuLSGEdI99gWTTtOv+kUEl9hNid+2xPvSVeCkRVgUngDwRVU1EFToKioWUnCGzL
+eW2GxG7Rtw==</DigestValue></Reference></SignedInfo><SignatureValue>w+nHM+vHnmrg+1ankFz+xjxD8ufILtg1tn2SM4gf+xbawZdV1RbpC+dhfAuvuyhYP7mOYmvCYIDe
+1ZP4Isj0SDxZYGjHz6m6LosyWSUQBe5byp28rJRxaGXEvHm2rV0pLbYOXprZOgm+u8KDaYZpW1YY
+AnXqMjyvDIZrSEyAiHUROCy8WHwfh3xBlj3+7RNI+WLCC5Au0GT48Zs+7ufAMBOQMG8JvanSAWdH
+zFR/SCmc43zJPURkBL2UAkmbSOHCWIFthEbhduTHsq2FDEbxuhy4//tOOQtO0jdfnyc2mkNe8t5W
+xaZ9zhn0osqg42Ko5uaH0lTc4GUhM4zhgsMPAA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -3219,4 +3219,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_82e9b01a-2eb1-4870-af26-47dd4c158e07" Target="#_9dbd1e41-101c-4708-8e82-b937da94ba14"><Timestamp>2018-11-19 12:09:53</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c23da454-6d16-468d-9a2d-aef22b123b65" Target="#_708b2a48-ed9b-445f-97d2-4763398e53f2"><Timestamp>2018-11-19 12:10:08</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
