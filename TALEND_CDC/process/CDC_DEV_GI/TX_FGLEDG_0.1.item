@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" name="No" prompt="No?" promptNeeded="false" type="id_Integer" value="0"/>
-    <contextParameter comment="" name="No_1" prompt="No_1?" promptNeeded="false" type="id_Integer" value="0"/>
+    <contextParameter comment="" name="Insert" prompt="Insert?" promptNeeded="false" type="id_Integer" value="0"/>
+    <contextParameter comment="" name="Update" prompt="Update?" promptNeeded="false" type="id_Integer" value="0"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
@@ -1927,6 +1927,15 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_1"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="// code sample:&#10;//&#10;// multiply by 2 the row identifier&#10;// output_row.id = input_row.id * 2;&#10;//&#10;// lowercase the name&#10;// output_row.name = input_row.name.toLowerCase();&#10;if(input_row.TALEND_CDC_TYPE=='U')&#10;{&#10;context.Update++;&#10;}&#10;else if(input_row.TALEND_CDC_TYPE=='I')&#10;{&#10;context.Insert++;&#10;}&#10;&#10;"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="STG_FGLEDG" name="tJavaRow_1">
+      <column key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
   <node componentName="tStatCatcher" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="96" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tStatCatcher_1"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -1988,9 +1997,9 @@
         <mapperTableEntries expression="stat.message " name="Status" nullable="true" type="id_String"/>
         <mapperTableEntries expression="stat.message==null?&quot;&quot;:stat.message!=&quot;failure&quot;?&quot;&quot;:((String)globalMap.get(&quot;tDBInput_6_ERROR_MESSAGE&quot;))!=null?&#13;&#10;((String)globalMap.get(&quot;tDBInput_6_ERROR_MESSAGE&quot;)):((String)globalMap.get(&quot;tJavaRow_1_ERROR_MESSAGE&quot;))!=null?&#13;&#10;((String)globalMap.get(&quot;tJavaRow_1_ERROR_MESSAGE&quot;)):((String)globalMap.get(&quot;tDBOutput_6_ERROR_MESSAGE&quot;))!=null?&#13;&#10;((String)globalMap.get(&quot;tDBOutput_6_ERROR_MESSAGE&quot;)):((String)globalMap.get(&quot;tMap_1_ERROR_MESSAGE&quot;))!=null?&#13;&#10;((String)globalMap.get(&quot;tMap_1_ERROR_MESSAGE&quot;)):((String)globalMap.get(&quot;tDBInput_5_ERROR_MESSAGE&quot;))!=null?((String)globalMap.get(&quot;tDBInput_5_ERROR_MESSAGE&quot;)):&quot;&quot; " name="Error" nullable="true" type="id_String"/>
         <mapperTableEntries expression="((Integer)globalMap.get(&quot;tDBCDC_1_NB_LINE&quot;)) " name="No_of_Records_fetched" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="TALEND_CDC_TYPE.equals(&quot;I&quot;)?context.No+1:0 " name="No_of_Records_Inserted" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="TALEND_CDC_TYPE.equals(&quot;U&quot;)?context.No_1+1:0 " name="No_of_Records_Updated" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="" name="No_of_Records_Deleted" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="context.Insert" name="No_of_Records_Inserted" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="context.Update" name="No_of_Records_Updated" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression=" " name="No_of_Records_Deleted" nullable="true" type="id_Integer"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="stat" sizeState="INTERMEDIATE">
         <mapperTableEntries name="moment" nullable="true" type="id_Date"/>
@@ -2137,6 +2146,10 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="STG_FGLEDG"/>
   </connection>
+  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tDBOutput_3" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_3" target="tJavaRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
+  </connection>
   <connection connectorName="FLOW" label="stat" lineStyle="0" metaname="tStatCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tStatCatcher_1" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="stat"/>
@@ -2163,13 +2176,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="79;198;255"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_652aa6c0-bbfb-4765-a2bb-89119f239a41"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZHMAWr9BEIU18On0Wn4ilKzOAxPD0TyAhLz/qkPmsIA+5GF/Kl/yqZIDTTMJ12S2dn+GBqSqYPpZ
-crawy+p+lA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5ec89219-5bd0-4aac-9995-c4339c586914"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fkOIdLMJSjAHtF/gQOf2c1Rjh6DklGtM3mT8nPbCXdL3W5B7q6TYWb8R3EinIHQUr51X4iyPlpme
-BoX6PzcDCw==</DigestValue></Reference></SignedInfo><SignatureValue>wK7UTx2HRpEbZ7sCaX4j+BKwGTNlP4h+l9HiprHdEgKV1QoIR4IWdEUOWHFTsJDv6DcH1geZLDXa
-j7a1/xaYssOlDSKmKwXLXuFm/+JDivokZStowGHm7gPFwVSqSlVoQaKqhDnvDn8fsik6flxQX01E
-NLGC+Hszt5Qe8tswKILTmXtwFmSOmRyE97pmlfl08dgoISejbQjRv9a40RakDbcdFOGvjCyJtEvZ
-VejzU/bFgkh7sBSzg1qOWHg9XeDwssBmR4hFIlYNtYei6UmlCggopDoNrkucfJB0nmPMeX49iNgu
-dQ24pKKDkqgFQc3df+N6FRYOR0uR2X5RMJwPwg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_636d0a7e-9f7e-4c16-aeec-29c844ebfc4a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>k0Io9R/GLfpF6x2ofiIOS3T6QBzfCbAwmHQeOlP0CwK+UaTfBTKMGqh5nnwsLnXEQ3HxbOEfNtXN
+dyW0JLnQXQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8bbbaa6b-126f-4bfe-91fc-d9d4a149e210"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>IMWwSqMrncCHiGOO2B9hnI//UaL+K+aP0ptbgXZDN/n70m9SlTz5kjUmk9Y27Q2gdUoLLH7Fvm2K
++bHdhePUUg==</DigestValue></Reference></SignedInfo><SignatureValue>WzCIhmSRBe00zTHGKZVbQfYovp3hb4CrLvzcczVh5F/DPHlhekTCpk346CfDJGgecu60yahIGHfI
+WO0AkzXdauZluL6DH3AYjOZJRCDs7N3Bomy1Uk9nS8lrREunC/uBSSFB5MluDdXeLpmwNwgZcrG2
+SWL7SWAHjeBdLGonfJSYicJRHBHptZ/nuNUErIExRBuQmxI0OXvSQvWbCR3qgX5QWalZVHv60tNB
+zWfcGKsabLFKxxwB4ys3JmTB7LAU0wagm49B8HB/t+aCVOmRl0uZH1aAmnj2fFSffyJCPbndf1Ah
+BElVZhqXKl3p/YOu+L2+sYZOIOaDyJutzDf/HQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -2193,4 +2206,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5ec89219-5bd0-4aac-9995-c4339c586914" Target="#_652aa6c0-bbfb-4765-a2bb-89119f239a41"><Timestamp>2018-11-19 10:21:22</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8bbbaa6b-126f-4bfe-91fc-d9d4a149e210" Target="#_636d0a7e-9f7e-4c16-aeec-29c844ebfc4a"><Timestamp>2018-11-19 10:42:05</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
