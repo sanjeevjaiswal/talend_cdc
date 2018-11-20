@@ -2007,7 +2007,7 @@
       <column comment="" key="false" length="30" name="count" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tStatCatcher" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="96" posY="448">
+  <node componentName="tStatCatcher" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="96" posY="384">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tStatCatcher_2"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tStatCatcher_2">
@@ -2027,7 +2027,7 @@
       <column defaultValue="" key="false" length="8" name="duration" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Long" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="288" posY="448">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="288" posY="384">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -2090,7 +2090,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tFilterRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="448">
+  <node componentName="tFilterRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="384">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFilterRow_50"/>
     <elementParameter field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
     <elementParameter field="TABLE" name="CONDITIONS">
@@ -2143,7 +2143,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="448">
+  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="384">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputExcel_3"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="false"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
@@ -2209,14 +2209,14 @@
       <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="448">
+  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="384">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowToIterate_1"/>
     <elementParameter field="CHECK" name="DEFAULT_MAP" value="true"/>
     <elementParameter field="TABLE" name="MAP" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFlowToIterate_1"/>
   </node>
-  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="448">
+  <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="512">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputExcel_1"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="false"/>
     <elementParameter field="FILE" name="FILENAME" value="&quot;E:/Talend/Test/ETL_Audit_Log.xlsx&quot;"/>
@@ -2330,7 +2330,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1056" posY="448">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="288" posY="512">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_5"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -2372,7 +2372,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1216" posY="448">
+  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="448" posY="512">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputExcel_4"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="false"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
@@ -2467,6 +2467,9 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row8"/>
   </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tStatCatcher_2" offsetLabelX="0" offsetLabelY="0" source="tStatCatcher_2" target="tFileInputExcel_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
+  </connection>
   <connection connectorName="FLOW" label="copyOfAuditLog" lineStyle="0" metaname="copyOfAuditLog" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tFilterRow_50">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="copyOfAuditLog"/>
@@ -2478,11 +2481,6 @@
   <connection connectorName="FLOW" label="row10" lineStyle="0" metaname="tFileOutputExcel_3" offsetLabelX="0" offsetLabelY="0" source="tFileOutputExcel_3" target="tFlowToIterate_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row10"/>
-  </connection>
-  <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFlowToIterate_1" offsetLabelX="0" offsetLabelY="0" source="tFlowToIterate_1" target="tFileInputExcel_1">
-    <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
-    <elementParameter field="TEXT" name="NUMBER_PARALLEL" show="false" value="2"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate1"/>
   </connection>
   <connection connectorName="FLOW" label="row11" lineStyle="0" metaname="tFileInputExcel_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputExcel_1" target="tMap_5">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -2516,13 +2514,18 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="79;198;255"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3af5eac1-6590-4d0a-87b8-1f00c9f02333"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3sCjwiGsiKHuOvFHenD5ZfuLlM7eC4R21DiAHpwGSQfpPyu3EnEQk3+E4zH4QFttO2QDWreGfmZb
-Mg7lAC+3EA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8ec93e8c-12f5-49c0-a240-641dbce4a447"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>o7nZzgWm3vKC4nqA+LdRULVAqODZIOgF1enymt9omk84ViRgY7ioNNQBpYly7Ro4Qg2KNobg62yO
-l3GtH1YeRA==</DigestValue></Reference></SignedInfo><SignatureValue>MmjY+i83G47DqWnD2kIvOSvAD4k0wYW2KHrBuLs2Na298NJfcud+MqERqq9HbbHHn6zn6qFjDmVS
-VY6pEuoXJ6IGE5KAo9GpSj2r9SxNO04FDn/GxOxnCPTa51w15J6Zkr/KCXEsATJ+qQxwyo4BoEew
-rnkyD5mdaRokZgi9bSQKmbByQerjV92VvANuBd8XAC63ri0iHvMb5eOyySlB++jTbgbJghGN1bU2
-y+XX0BvtQwVTSX4q1KXlLki8LwrKP0Hlw0jnBOdmT2Z5+Sd6OJjXJGVBUP7Epo83Xtv/sIgSsP5R
-neqXAdzUgEYyGJHupDKjjbUdo5/pMG5I5sQvRg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputExcel_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d5163587-a29b-479a-9a2e-91a2412ae084"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PUR8ibo673LALHi3uTNvQAkS+SIKNF6Yeh1TsoL1DLothZuQV5IRqHL6aeOi/zNt4yVLQmzuCOB0
+eJGfpG/cvg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5b5451a6-8d4a-45ae-8613-e4f5f1b4aa02"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WogWwg6lvmPbg5sFSbcGsx9hikaEpo2dd+WhejZ5q/R+L+m/BL7ivFyHsJCTL1atK7c3SthvrBIS
+qEE/h/v40w==</DigestValue></Reference></SignedInfo><SignatureValue>W/W/Fj/CUFgUysBK+l0EkajFX5c5wiTSSLIAwEGi2hJGzw2n9PZgf/HgSO/AerSsKhKe2Ma1tJQq
+RJa7rPOHujBcSD6SpS38S1kGmSw/UtBkfE6VAKTtdI/cb/qKvVCvxJP2PR/zck75zWhr0DUtm+/8
+YXujSdG/ln6A+aZ2Nx+C+U22uCU5J3iAjrjYfVLKoc+8Xs7PjvhySZh1IzaWtYGvRvT/ERx67xMD
+JbEsj9uKy6HYaFVo1/hi+el5AQ3VUxuXOk1l93hR1telfacuhYGGGnmfa3H4PlWnZYNau9ae1wWf
+xqsSoWx5js0/SQziBQ7oMLRt6E4zjWOOOqGizg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -2546,4 +2549,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8ec93e8c-12f5-49c0-a240-641dbce4a447" Target="#_3af5eac1-6590-4d0a-87b8-1f00c9f02333"><Timestamp>2018-11-20 11:26:53</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5b5451a6-8d4a-45ae-8613-e4f5f1b4aa02" Target="#_d5163587-a29b-479a-9a2e-91a2412ae084"><Timestamp>2018-11-20 11:28:47</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
