@@ -2303,15 +2303,13 @@
       <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAggregateSortedRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1088" posY="384">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateSortedRow_3"/>
-    <elementParameter field="LABEL" name="NOTE" value="( Enter the accurate number of input rows )"/>
-    <elementParameter field="TEXT" name="ROW_COUNT" value="5"/>
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1088" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_1"/>
     <elementParameter field="TABLE" name="GROUPBYS">
       <elementValue elementRef="OUTPUT_COLUMN" value="Date"/>
       <elementValue elementRef="INPUT_COLUMN" value="Date"/>
-      <elementValue elementRef="OUTPUT_COLUMN" value="Job_Name"/>
-      <elementValue elementRef="INPUT_COLUMN" value="Job_Name"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="DataMart_TableName"/>
+      <elementValue elementRef="INPUT_COLUMN" value="DataMart_TableName"/>
     </elementParameter>
     <elementParameter field="TABLE" name="OPERATIONS">
       <elementValue elementRef="OUTPUT_COLUMN" value="No_of_Records_fetched"/>
@@ -2323,8 +2321,12 @@
       <elementValue elementRef="INPUT_COLUMN" value="No_of_Distinct_Records"/>
       <elementValue elementRef="IGNORE_NULL" value="false"/>
     </elementParameter>
+    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
+    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="AuditLog" name="tAggregateSortedRow_3">
+    <metadata connector="FLOW" label="AuditLog" name="tAggregateRow_1">
       <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="true" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="true" length="0" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
@@ -2449,11 +2451,11 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="copyOfAudit_Log"/>
   </connection>
-  <connection connectorName="FLOW" label="row11" lineStyle="0" metaname="tFileOutputExcel_4" offsetLabelX="0" offsetLabelY="0" source="tFileOutputExcel_4" target="tAggregateSortedRow_3">
+  <connection connectorName="FLOW" label="row11" lineStyle="0" metaname="tFileOutputExcel_4" offsetLabelX="0" offsetLabelY="0" source="tFileOutputExcel_4" target="tAggregateRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row11"/>
   </connection>
-  <connection connectorName="FLOW" label="row12" lineStyle="0" metaname="tAggregateSortedRow_3" offsetLabelX="0" offsetLabelY="0" source="tAggregateSortedRow_3" target="tFileOutputExcel_5">
+  <connection connectorName="FLOW" label="row12" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tFileOutputExcel_5">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row12"/>
   </connection>
@@ -2481,13 +2483,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="79;198;255"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_798191d4-6edc-4307-950f-64aeaa9db9d3"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>6SeXlCci/z3LfvugnXSGETmWswgS6NfQh6ulrhDplf6XT6PSy90iK/miAkYUOgJ/nJNoKmXh8klh
-kh3KazsGHw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c2bbfc79-b447-4a4d-9b76-f859c8c1c734"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>weiBNU1euCkbFP+gUjhu8DUdN5wZsZmdbmQJY5NdpX5Sfp5aCzdv6RogxxvsZZORDztiUb1thXhs
-kCbIalzarw==</DigestValue></Reference></SignedInfo><SignatureValue>Y0CZmgpXmtzn8ELwvCIjQu57B3Js+Vv46by20zF3TC/7t4nuDxfKtrnpXIRi9dkWnq4QG3nQonWb
-Ax++ireyRo3zwc5UHJBk5HlBhrmvr3CnMaYsge3l3FxAdfVFHWmuK3F2B9OiXHkDz0OwL0pLCiyG
-r4fxOTm372GQ1arqbEJcF9pPSHBqy3SHA1qdX75TvLwrmYACRPPRLkkammibMrUF4E06bkTWTqDp
-mClTmi/6MTFZK1KM21W0PHAR5VZZZI2NaoXMfwn6c3rKjHjArz57uvS94H7/b6b5IMw7So9zCV/r
-REsSrUKpO+xfvldExU8F1piz1ZkRDPXsHYMZAQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_da78e0b5-fde7-4a3e-aad2-a470a9df5c97"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>u8KxSSn04cEx+P6/jx8JoabQjCLfQGQs5AFAtLWqqJCYYDJuxiazisxTCJqyO+jL7l8NF4yIKKuI
+g8679AUrIg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_116be772-7b3c-406a-92d5-3f37431d88b7"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nlqMx0t/jKV4r9QD2u1KroXXn4/V40dQDBmbA66c6Rh4AMnX4/QKgDn6vH1sT3dntFmdoqNTcV2D
+/hPggtvZaQ==</DigestValue></Reference></SignedInfo><SignatureValue>vJ45T84Nex0aSDNDh1BbfRDIIhvBjYiakD360WSpjIyjXVCZJCBwp0cfEivgBCZmKSGVzqSa3vPC
+IscwxP86zlM6MFkiuPfYyWN6Pz5QvXPJr0BDwASRuPlYw18ZfbEyWfh2zMnA4+h8ZdwaM/uU5LoZ
+OOkKnYKgBa6pzfy/V4inhPdflvw8/mUXuSiljbPGFrdQNBXL2pPz95occsEqHCuas7oeA7t9ZExn
+B5GysSWCXFLdTuFiGdhZxJFV4/qytPoCpy1U/q5PsbnQ5soQ7nYcuRy+YeUoc1WNG4o6QPLl8h7u
+kYFtk/ARoZgJT/Tb54xZAbFtOFvvLGrDtbQymg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -2511,4 +2513,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c2bbfc79-b447-4a4d-9b76-f859c8c1c734" Target="#_798191d4-6edc-4307-950f-64aeaa9db9d3"><Timestamp>2018-11-20 09:04:30</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_116be772-7b3c-406a-92d5-3f37431d88b7" Target="#_da78e0b5-fde7-4a3e-aad2-a470a9df5c97"><Timestamp>2018-11-20 09:05:42</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
