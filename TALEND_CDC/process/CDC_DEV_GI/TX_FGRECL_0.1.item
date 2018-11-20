@@ -2227,19 +2227,19 @@
       <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="true" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="true" length="0" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="Var.var1==null ? row10.No_of_Records_fetched : Var.var1 + row10.No_of_Records_fetched " name="var1" type="id_Double"/>
+        <mapperTableEntries expression="Var.var1==null ? row10.No_of_Records_fetched : Var.var1 + row10.No_of_Records_fetched " name="var1" type="id_Integer"/>
       </varTables>
       <outputTables name="copyOfAudit_Log" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row10.DataMart_TableName " name="DataMart_TableName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row10.Job_Name " name="Job_Name" nullable="true" type="id_String"/>
         <mapperTableEntries expression="TalendDate.getDate(&quot;DD-MM-YYYY&quot;) " name="Date" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="Var.var1 " name="No_of_Records_fetched" nullable="true" type="id_Double"/>
+        <mapperTableEntries expression="Var.var1 " name="No_of_Records_fetched" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="context.Distinct" name="No_of_Distinct_Records" nullable="true" type="id_Integer"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row10" sizeState="INTERMEDIATE">
@@ -2301,7 +2301,7 @@
       <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="true" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="true" length="0" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Double" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
@@ -2492,13 +2492,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_763ae777-f0c9-4a1b-9b1c-0ef2d8d05fce"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fv+vmBfDbIyAPoLVZbRJNtlA4hM/PEPReoK0GO06utRHfjvaoRr5J4nrwiRFDqM/azhNh0ClhLuP
-KCxgX3RnJA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_153179db-0d12-49ad-a503-d9969dfd0986"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Adyu8z/CvMktlD1QNwl815pbT2pbjKIw7UO1NGoigdeVC8DjUqfeqwTaACSIL1TUjfyBxRYLd0IS
-6gqjMNa33A==</DigestValue></Reference></SignedInfo><SignatureValue>vbasvI/T2AUGsNpZAN0mklCxYhKPA5EQcaymigtNMF/R24Xc9bJdqwQkETm4eLRM2oqyg+Gk8vMr
-q8aH5NlRU1azlhwf51hI5ERcJBvjRUnDcUSI31ns//MHg4jV77f5pf+0zcaM+kY2rvpu2q9aIDQt
-aJ9lCuK8pCA50xEm7L1GT9rNUrMZ7d7UAYRNPNDmGReyoQEL0bPSRUplnh1IF3I6iWr/HfWieNJ0
-3yXy5fCUh+EQrhSzQlhyo9LD5HyCSJ/4t25HJuTvBvGkR88kC6QpWdrxgx/Q9fWLd86l7fUrBTxA
-fUAyNDbsZJb0GZphZ4nW4jRRPQc6XqWAeXdNOg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_43cbce2b-0631-4564-be5b-8fad29173e75"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+D1pGTjv3J+sfmdEnIYswNiosMxM2giPmwVIgGBD2wNQW/OVeFtvlsE9giUiZZXmGwBGWPs6ZXJg
+I8GYaDlSsA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bb55e8fa-140f-4ae4-ad46-2e59753feeb1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>0RzRHCiSwBhMsDA+nUxSas/++XnLl9OfhGeoRWqo5F1JVHbeDcxBlfR6TARLDXAXNmgmKj9zXdgG
+GyUv/DSRtQ==</DigestValue></Reference></SignedInfo><SignatureValue>d1THyvPLlT43Z1CS9XiFdxznbo8dZP0QlYEdJAaWk4OqNW643Ubr/UgSHsPAFzS5JO0bTBsicyae
+17Wn/Te2tVAQO0Yljla1IgQoeiIHtirWlpTsFWm++YoxRzV5Z+DXy2gIie3zZJ0xeOhHUBMAuS1P
+TQK1iI5Bl5RjmIC8zgdS6uHoYvb3Ov+UNQesPpKsrceGYFP6j83GunXuGbGer+yXN3U4GMEKTZiI
+Ld4/AKfVHKnhQ1MIHG5+U8tz1Fp0Dz1eyiAd8IMtAFHeB37n6aVo1vZau0oDp+GWNkQTClCk17nL
+e49qCS2OWD0tN+J5iA3pIsuIJrQv5edFQPLyIg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -2522,4 +2522,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_153179db-0d12-49ad-a503-d9969dfd0986" Target="#_763ae777-f0c9-4a1b-9b1c-0ef2d8d05fce"><Timestamp>2018-11-20 10:03:17</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bb55e8fa-140f-4ae4-ad46-2e59753feeb1" Target="#_43cbce2b-0631-4564-be5b-8fad29173e75"><Timestamp>2018-11-20 10:04:19</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
