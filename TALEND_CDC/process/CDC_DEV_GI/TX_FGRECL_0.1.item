@@ -2338,7 +2338,7 @@
     <metadata connector="FLOW" name="audit">
       <column comment="" key="true" length="255" name="TableName" nullable="true" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="true" length="255" name="Job_Name" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="true" length="10" name="Executione_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="true" length="10" name="Run_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="30" name="No_of_Records_Inserted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -2351,7 +2351,7 @@
       <outputTables name="audit" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="StringHandling.RIGHT(row8.DataMart_TableName,6) " name="TableName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row8.Job_Name " name="Job_Name" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.Date " name="Executione_Date" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.Date " name="Run_Date" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row8.No_of_Records_fetched " name="No_of_Records_fetched" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row8.No_of_Distinct_Records " name="No_of_Distinct_Records" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row8.No_of_Records_Inserted " name="No_of_Records_Inserted" nullable="true" type="id_Integer"/>
@@ -2388,7 +2388,7 @@
     <elementParameter field="TEXT" name="USER" value="&quot;etldump&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="MU4o14/72+SDdjsjJKRZfw=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;Audit_Log&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_CREATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
@@ -2415,7 +2415,7 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Executione_Date"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Run_Date"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -2461,7 +2461,7 @@
     <metadata connector="FLOW" name="tDBOutput_6">
       <column comment="" key="true" length="255" name="TableName" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="true" length="255" name="Job_Name" nullable="true" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column key="true" length="10" name="Executione_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="true" length="10" name="Run_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="30" name="No_of_Records_Inserted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -2471,7 +2471,7 @@
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="true" length="255" name="TableName" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="true" length="255" name="Job_Name" nullable="true" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column key="true" length="10" name="Executione_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="true" length="10" name="Run_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="30" name="No_of_Records_Inserted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -2627,13 +2627,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9577c0f3-8d5d-4fba-bc2e-5ff2603af988"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BFhDAh7zsGtUDkxuJhImtn3RddmnISbOgDQMM5icWlnF+M02ZPi5C+IlaI3sWqcAP7cdrxCCbLn5
-bWtt8ZVGRQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7063bc7f-b93e-4318-be56-a71ecd73c931"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oXvqT3pGt0hsVRiYsaueGSgHfsfJtyyHp6iFqCEn51xdxMMNFtOaJ2rVD+xIVFi7fqDnuIwM6dP9
-0hqJK+eWxg==</DigestValue></Reference></SignedInfo><SignatureValue>Ktr0jUsK2IxpsoM5qJ+fSbhXNogSejrqOMcIvdxadaYXYbcTsbdXeSM+hJv5SdfNb6ejdbLi9Wh2
-suD9dlVpIod+JGgi8zB8GEul0Izd9nOPc9dwO8bcDHPbdUWY2XK9LQg57HV+gVG4KXtV1eKkGF/i
-X0Sn/iGXeHlTD8r12tGiCIU9Z8c1y/BwaizNmqMY/eqRn1YMuXLSDzw+V6RL2kiS2rElYcGqvinn
-7ibJs+SYNCaKPQIGcp7h/ZIZvKkGWsxjl8aTgRpGWdFZYTo7f0cbrypeMJYiGm/RRCillX0ufgma
-CIcKJmupO08V4odAuWUPtvxJvEtZOfGRpyeMeg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_84325217-1156-4192-93db-f4f54530da1b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fkhmjGpbnrINVQFH518QwgRQOpxoCiPgP68HrMsHLwfxEz+8YU9dOivlosAPfWEKgf0XAYIYw4bP
+pPdg+Gur/w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6ff4ed4c-7e78-4dec-993d-584c0bfd8c4d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>GmuUz3UF0oKzXwBanvU5lsQY6OBAxmZ/IErIvj+SSoOvioHtzG2Y0fjZl+kzohGik6Xrdb+xpFNo
+miI78VQTzQ==</DigestValue></Reference></SignedInfo><SignatureValue>I9nKBsy9I3YGhBCqCaR4cA8VB60UZxm89floErDERsJ9OrVB7AzANQd8lyiAY4Tep6EDsceeUe1H
+3IRsX0dEpiZGswL6esXdfticNRp9KC/6gOrwrh/BgoCAOjOjhSDD2mRZAiBcE4toQ2V6IE+xJJFm
+69Oxg2r5nzGAKV42HFI6uAxdHbtu5gA+VdxgVymjbu6BZSE6Y0XxUecCaESTqIqZLIqsBqiEc1MT
+4u6qiXBWAm2rPZfZbYn6PtJSTR9tI8I15UDMSH4Rp1fXI3mg6iTolOdtwYA1gEFLtgp5nvCoDtAP
+QeIQKJyxcfAPtakxj5sf5kjhAnzSEOTKXidxyw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -2657,4 +2657,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7063bc7f-b93e-4318-be56-a71ecd73c931" Target="#_9577c0f3-8d5d-4fba-bc2e-5ff2603af988"><Timestamp>2018-11-21 08:44:47</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6ff4ed4c-7e78-4dec-993d-584c0bfd8c4d" Target="#_84325217-1156-4192-93db-f4f54530da1b"><Timestamp>2018-11-21 09:09:31</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
