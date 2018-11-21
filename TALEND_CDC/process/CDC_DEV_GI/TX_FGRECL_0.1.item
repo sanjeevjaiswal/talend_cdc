@@ -1970,7 +1970,7 @@
       <outputTables name="Audit_Log" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row7.DataMart_TableName " name="DataMart_TableName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row7.Job_Name " name="Job_Name" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="TalendDate.getDate(&quot;dd-mm-yyyy&quot;) " name="Date" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="TalendDate.formatDate(&quot;dd-mm-yyyy&quot;, row7.Job_Start_Time) " name="Date" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row7.No_of_Records_fetched " name="No_of_Records_fetched" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="context.Distinct" name="No_of_Distinct_Records" nullable="true" type="id_Integer"/>
       </outputTables>
@@ -1994,7 +1994,7 @@
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;E:/Talend/Test/Temp_Audit_Log_2.xlsx&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;E:/Talend/Test/Temp_Audit_Log_3.xlsx&quot;"/>
     <elementParameter field="TEXT" name="SHEETNAME" value="&quot;Sheet1&quot;"/>
     <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
     <elementParameter field="CHECK" name="APPEND_FILE" value="true"/>
@@ -2757,7 +2757,7 @@
   <node componentName="tFileInputExcel" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputExcel_1"/>
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;E:/Talend/Test/Temp_Audit_Log_2.xlsx&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;E:/Talend/Test/Temp_Audit_Log_3.xlsx&quot;"/>
     <elementParameter field="CHECK" name="ALL_SHEETS" value="true"/>
     <elementParameter field="TABLE" name="SHEETLIST" show="false">
       <elementValue elementRef="SHEETNAME" value="&quot;Sheet1&quot;"/>
@@ -2870,7 +2870,7 @@
     <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;E:/Talend/Test/Audit_Log_Final_1.xlsx&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;E:/Talend/Test/Audit_Log_Final_2.xlsx&quot;"/>
     <elementParameter field="TEXT" name="SHEETNAME" value="&quot;Sheet1&quot;"/>
     <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
     <elementParameter field="CHECK" name="APPEND_FILE" value="false"/>
@@ -3074,13 +3074,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9b5c9383-60f0-4f11-ac3c-f16841822334"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>C1hzx2xLSsywuNOzvtJp/O7fzhWznQJqJtjnoQkMhnvM4qmsZbYkgiXbApIE1/z8m5mKROOUxD6i
-Ep7OmWFJ7A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_db1adad3-5be3-47a0-8138-28350c0337ee"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Z0nW767KXn56VNuFFOzy5xRDZZ3AEUbf07qQGSzcSyebjd+ZZCn4Mruvrm6TlJ9aafD/CBvM2n9m
-sNqVEvLvrg==</DigestValue></Reference></SignedInfo><SignatureValue>CdTGrezP/yv3YDIm5l6CYoEmy/2brtzh8HL1GlLij4/2WTGSO+5SoklT86pxS+dcos7cxYrNyV/X
-gih7mQBzRkw0GDKQBYD7xC0sPPKZQOsNTe5MpRFh7P2YKoGTqYOn6pdrC+QwPplxPlr3awd7tSP4
-yOihgv4yWenHoNKetdpfZmWJ30vI65GxYF+wbGODqqj6KzbSZTNq0xhpifw8RwhqjIwN7GBy6qBJ
-ha3fcSwJPBEsPiqUoeI7PVNCsbEg/VShilX+T+8cMtUAJ4cPhdfXeNASC6uBkiT2J89bCoiFOpsx
-auexRDulKM1HO0FBHovijZLyQLu+trVXRPFRLA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_19cf38ce-bfb5-4c6e-9c07-a17f501b8370"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ScvPcAPWntONaE2FbimW7auRFLh/oyTUv4OSnaobpZqW3onsa7uGvZgtT4BqLD9RW2wfVRsOOiup
+KFcDN2EhwQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c4cd4474-6325-4322-8fbd-d6ed00f533a8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3ltATkTW3ZjLVT3wgGSfnveAOm5G23xGI94vrkCIJiWUe9ELiS6ARDBPOM/VsNn0PqxClpvSOYSZ
++Fg82xOAgA==</DigestValue></Reference></SignedInfo><SignatureValue>SwEkXYwJeSqCxT3xN6JvAqJDPlcrMQFLG3dA4afW5Ombayd+GrVukIL6hb6LalbFonC9fwbf9/xb
+JrPJrR/AKiHNQy09kTHzQwvoA6RUPQZAqcYN2QIlpubm1BvMKkOsEVoi1ERQYZIwZ7AR+iDdg8IS
+0iiBx3LylvRKVW5ESEkD3OUNhLVG25Da8lbRFlpsJDkkBM42qbgrBRvGid9cUI93wr9iwnWBNnz8
+KY5S8Zxl78YZi0pRbX4DCBaSyl31JEifrpI2iW2Ea8MPXlTboFHYyAbzM5GnZ8avDvo+EDR83RXP
+1w1GE2I6lYbXjLZtZdRVKGk8qBzrOAvufdSMOg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -3104,4 +3104,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_db1adad3-5be3-47a0-8138-28350c0337ee" Target="#_9b5c9383-60f0-4f11-ac3c-f16841822334"><Timestamp>2018-11-21 05:30:49</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c4cd4474-6325-4322-8fbd-d6ed00f533a8" Target="#_19cf38ce-bfb5-4c6e-9c07-a17f501b8370"><Timestamp>2018-11-21 05:34:49</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
