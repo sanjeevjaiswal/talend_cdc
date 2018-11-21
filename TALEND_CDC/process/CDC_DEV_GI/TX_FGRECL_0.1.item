@@ -1965,7 +1965,7 @@
       <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="Audit_Log" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row7.DataMart_TableName " name="DataMart_TableName" nullable="true" type="id_String"/>
@@ -2119,7 +2119,7 @@
       <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables name="Var" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row8.duration==null?0:row8.duration.intValue() " name="duration" type="id_Integer"/>
       </varTables>
@@ -2296,7 +2296,7 @@
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row11.DataMart_TableName " name="DataMart_TableName" nullable="true" type="id_String"/>
@@ -2510,7 +2510,7 @@
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_tJR0oOtxEeiYUOUhHVfVFw-tMap_2-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_tJR0oOtxEeiYUOUhHVfVFw-tMap_6-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -2695,7 +2695,7 @@
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_tJR0oOtxEeiYUOUhHVfVFw-tMap_3-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_tJR0oOtxEeiYUOUhHVfVFw-tMap_7-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -2712,7 +2712,7 @@
       <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfAudit_Log" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row15.DataMart_TableName " name="DataMart_TableName" nullable="true" type="id_String"/>
@@ -3114,9 +3114,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="stat"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tStatCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tStatCatcher_1" target="tFileInputExcel_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
-  </connection>
   <connection connectorName="FLOW" label="AuditLog" lineStyle="0" metaname="AuditLog" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tFilterRow_7">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="AuditLog"/>
@@ -3132,6 +3129,9 @@
   <connection connectorName="FLOW" label="Audit_Log" lineStyle="0" metaname="Audit_Log" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tFileOutputExcel_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Audit_Log"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tFileOutputExcel_2" offsetLabelX="0" offsetLabelY="0" source="tFileOutputExcel_2" target="tFileInputExcel_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
   </connection>
   <connection connectorName="FLOW" label="row8" lineStyle="0" metaname="tStatCatcher_2" offsetLabelX="0" offsetLabelY="0" source="tStatCatcher_2" target="tMap_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -3158,14 +3158,14 @@
     <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tDBInput_3">
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
+  </connection>
   <connection connectorName="FLOW" label="row12" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tJavaRow_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row12"/>
-  </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tDBInput_3">
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
   </connection>
   <connection connectorName="FLOW" label="row13" lineStyle="0" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tJavaRow_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -3261,13 +3261,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c937c99e-92a7-48a8-8a34-39ad157c5f89"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yZNvGo8D7tFK7l1eu+X5l00LuE5gWVtj8qilxG0M6kAinWNw1Vqgqm/y31caeHQciS40ALD/oYbd
-/Q7emvEw4g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8e64c391-cac7-4af8-b4ea-21b3472ddced"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7AtvNqgJKsmuOZ4nAEZQ0xcso7DuzW8GlBxGaejH8PAmcKEScvaFP3lKfZyBYK//ku7lAbCTQuJe
-U2o5e700Mw==</DigestValue></Reference></SignedInfo><SignatureValue>AcYGU8V7gGVibVtnDP7GYKKBP5Smdk1V0tmfndy97KCAoa4jajXe+fxVh5uY3/7zIat3YF40FUw7
-CI3SB+zAGbKIeWk92mPbfK1Ec59CRzg6fhDG8ASXQQkPG5Odo+Hxrlk7UfhNkhPegy55HUlJVf5z
-O5absgeOtWfxtIhMG/Hj3EtLec6jIdnIq87BZ2VVQ1l+X57SCpVmLRipQRUBwKExMI/7FH37tCqa
-1pxGxsCdTTY+aTQcQYP78XSE6hHn/fVg7OSr6MdZps/5ZU0Ht6uE9nv0S5+QZRlZh4HJ2QGMrbcD
-AX4ho6HI9DMrXMdXBy4P4VpSgwjYWwOUiEOBqg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_faa38220-87e3-4957-a0c1-cf2dad35134a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>adOJXizodO5UUeLxWdpVOz276eZjLgVTqcrgku7gooTPOHd6EMKxjseLmLmu41le4EDe3C2lR8Qa
+ixND07lrbA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5899072c-850d-42e2-b2f6-d35d77f1cded"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>OwjHBt9fofqPdVpZugkclWEPnj6izHz2KcsCpnk/gt52caYNnFYlpFlxINgmI7njgmNx2STdLFvy
+mdv6YsYPfg==</DigestValue></Reference></SignedInfo><SignatureValue>uvqQKtVJlbBPUjyRR/6aJxRmVNWvTCxV8wrXx/iGNAE7wDPvOFktvSqkKr4S4GFpc/HjM3bs6NZS
+01YYOf20qlvPVtyEZnHvurBhaQT0Zk7V/8TGHf90yhcqiLmyrRNFVvHSVS7WuuuRPYIh6qXKVg4K
+lgB4a7Sf5feJ490SErVUqb5PbsHJfdGwyC4fUzT4VTVcpEp8+g+rv9iP2VUMWUWOGkRXDgRdxEen
+CoBxAVBLSgPUKUsBk/h9J8jzggbPw4kz6Kq8uFknm9P2Rn/A5HrpghlE+BorDdztzMYKpqr/kenb
+Hof2VadGkPzINwFekCRGvYI1Oevn/BosRxm20A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -3291,4 +3291,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8e64c391-cac7-4af8-b4ea-21b3472ddced" Target="#_c937c99e-92a7-48a8-8a34-39ad157c5f89"><Timestamp>2018-11-21 05:01:52</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5899072c-850d-42e2-b2f6-d35d77f1cded" Target="#_faa38220-87e3-4957-a0c1-cf2dad35134a"><Timestamp>2018-11-21 05:03:33</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
