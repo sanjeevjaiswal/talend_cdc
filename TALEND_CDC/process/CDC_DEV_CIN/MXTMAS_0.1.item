@@ -106,12 +106,12 @@
     <routinesParameter id="_coR5gOcpEeiiipAD292gug" name="TalendStringUtil"/>
     <routinesParameter id="_coIIiucpEeiiipAD292gug" name="TalendString"/>
   </parameters>
-  <node componentName="tAS400CDC" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="64">
+  <node componentName="tAS400CDC" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCDC_1"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_zz88YOo-EeiQp46_FiUGeA"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_kaG3wO_UEei-zpp-KvQNog"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="jt400_V6R1.jar"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;172.17.3.115&quot;"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;CDCPROD&quot;"/>
@@ -402,15 +402,15 @@
       <column comment="" defaultValue="''" key="false" length="60" name="MMCFZ0" nullable="false" pattern="" precision="0" sourceType="NCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="11" name="TALEND_CDC_CREATION_DATE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
-      <column key="false" length="10" name="TALEND_CDC_MEMBER" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="11" name="TALEND_CDC_CREATION_DATE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="10" name="TALEND_CDC_MEMBER" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <additionalProperties key="SYSTEM_TABLE_NAME" value="MXTMAS"/>
       <additionalProperties key="TABLE_SCHEMA" value="CINFDBPRD"/>
       <additionalProperties key="SYSTEM_TABLE_SCHEMA" value="CINFDBPRD"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="320" posY="64">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="288" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -587,7 +587,7 @@
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="MXTMAS" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.MMCONO " name="MMCONO" type="id_BigDecimal"/>
-        <mapperTableEntries expression="(StringHandling.LEN(StringHandling.TRIM(row1.MMITNO)))==0&#13;&#10;||StringHandling.TRIM(row1.MMITNO)==&quot;&quot;&#13;&#10;||StringHandling.TRIM(row1.MMITNO)==null&#13;&#10;?&quot;999&quot;:row1.MMITNO " name="MMITNO" type="id_String"/>
+        <mapperTableEntries expression="row1.MMITNO " name="MMITNO" type="id_String"/>
         <mapperTableEntries expression="row1.MMHDPR " name="MMHDPR" type="id_String"/>
         <mapperTableEntries expression="row1.MMCHCD " name="MMCHCD" type="id_BigDecimal"/>
         <mapperTableEntries expression="row1.MMCFI1 " name="MMCFI1" type="id_String"/>
@@ -699,8 +699,8 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="64">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_3"/>
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_6"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_g0gz8OcqEeiiipAD292gug"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -1017,7 +1017,7 @@
     <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
     <elementParameter field="TEXT" name="LABEL" value="ETL_DUMP"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="MXTMAS" name="tDBOutput_3">
+    <metadata connector="FLOW" label="MXTMAS" name="tDBOutput_6">
       <column comment="" defaultValue="0" key="false" length="3" name="MMCONO" nullable="false" pattern="" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1340,7 +1340,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <connection connectorName="FLOW" label="MXTMAS" lineStyle="0" metaname="MXTMAS" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_3">
+  <connection connectorName="FLOW" label="MXTMAS" lineStyle="0" metaname="MXTMAS" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_6">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="MXTMAS"/>
   </connection>
@@ -1349,13 +1349,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5ce93cbc-4e47-40c3-8b8d-d204310dacf6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>6YWXqyEDt6yEo/ghvKd/1x3P1QmcEfeqY/Wg+A8rxpu5577pHxRYCmowfs4Iwqp7lm9A5eXZmL06
-8/7Z1+ClnQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f0781960-8f95-41f4-8e7b-8014f633407d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+0JmE9I+c3yfF97vgt5l6I0WqEGEUXLPRr0hDspPS5DTY5jSDLmufZmlGksfmwXV1586lAQQO+NL
-EuivUgWzBA==</DigestValue></Reference></SignedInfo><SignatureValue>eKW2tpfT6JYCEeBAiyYnEsqol0d9AUBV7seQYg6Uymi4GCpdn8BvxnBhn0hIEJSgBMF1xyxBJaac
-Cnyw2AGyPAcznnwbLOyrzjPGl2duzURMG9cZHhL6p4JSIDtgaU/38T4H/+AelPCPXUnyG6yNbaOp
-f4dRplU09KuZFdVgrEWyLn1wKQVf52THic4e5fEXd7CjntUkXgHyRubHDN9j0HUH63oPUZojovQu
-+9NxLPxhaKvDSI1TjC9brrJjQClXuoLXHiLWIAebZ/U9W3y601nkkhrqTXFGo3F3DcXOM0g1dRef
-bsuaykl7ag9HunnCOm1Jf4uFQcfwhRLhcxbi7g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d6d4a8bb-086c-4247-afd3-b8b2132fecc5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>iF1L1I+n5b/31DloTE4uCMwLv1/+BUR3TlKj3FRIxQ42YnTGCcee0Mf/JnpS0VrtJK12EEcr0ytc
+sy2mJoLseQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_eec1e103-11a8-44ea-bec6-4f278cedc3ca"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SOnzSYGhFZ2WeWJ3+ua2aeiMA5w+inTgLkJqRNbnfRWIUM3HdaMjIuf6CINMW74DP02HNjSjGw52
+kclCvmz8KQ==</DigestValue></Reference></SignedInfo><SignatureValue>0LYOt4i1v9x5zW0Ijseaoq8nJLAapMKhDV3LZYuKtdkmxmiSlzqduwgFzNjRDybEtFcf6zWcrW7w
+05w4L0WKUD7KUicf005ieAbb0RfmkUcQE2GnjWCA4Ym1hbsvaSvaxkQzso+RJr+PdUy4pdzIBBMu
+ZZH0+Tit/uDDPVl3w3CeL3NBKrn/PFe3QBzhv8baVex+0btoX4ViLlj6c1Bvv/VB0GB/kmec20vF
+F1Bj7Mry3PzM4Msf3m/ErdzkEQhrdRYQSUx5MLmwfjDHXX3OlMvkPpjtN7nzHeRVmwOUyfYtQh8m
+rQ8W9Scx/y1lp/G9TmVujV8oyc7K0vXPEBfQHg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1379,4 +1379,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f0781960-8f95-41f4-8e7b-8014f633407d" Target="#_5ce93cbc-4e47-40c3-8b8d-d204310dacf6"><Timestamp>2018-11-24 09:57:16</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_eec1e103-11a8-44ea-bec6-4f278cedc3ca" Target="#_d6d4a8bb-086c-4247-afd3-b8b2132fecc5"><Timestamp>2018-11-24 10:42:29</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
