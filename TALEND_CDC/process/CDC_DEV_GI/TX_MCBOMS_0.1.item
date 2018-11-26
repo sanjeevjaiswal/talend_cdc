@@ -112,7 +112,7 @@
     <routinesParameter id="_coR5gOcpEeiiipAD292gug" name="TalendStringUtil"/>
     <routinesParameter id="_coIIiucpEeiiipAD292gug" name="TalendString"/>
   </parameters>
-  <node componentName="tAS400CDC" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="64">
+  <node componentName="tAS400CDC" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCDC_1"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
@@ -336,7 +336,7 @@
       <additionalProperties key="SYSTEM_TABLE_SCHEMA" value="M3FDBPRD"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="288" posY="64">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="256" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -545,7 +545,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="64">
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_g0gz8OcqEeiiipAD292gug"/>
@@ -1006,7 +1006,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tReplicate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="64">
+  <node componentName="tReplicate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tReplicate_1"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="STG_MCBOMS" name="tReplicate_1">
@@ -1120,7 +1120,7 @@
       <column key="false" length="10" name="TALEND_CDC_MEMBER" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="64">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_1"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="// code sample:&#10;//&#10;// multiply by 2 the row identifier&#10;// output_row.id = input_row.id * 2;&#10;//&#10;// lowercase the name&#10;// output_row.name = input_row.name.toLowerCase();&#10;&#10;if(input_row.TALEND_CDC_TYPE.equals(&quot;U&quot;))&#10;{&#10;context.Update++;&#10;&#10;}&#10;else if(input_row.TALEND_CDC_TYPE.equals(&quot;I&quot;))&#10;{&#10;context.Insert++;&#10;&#10;}&#10;else if(input_row.TALEND_CDC_TYPE.equals(&quot;D&quot;))&#10;{&#10;context.Delete++;&#10;&#10;}&#10;else context.Delete=0;&#10;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -1129,7 +1129,7 @@
       <column key="false" length="1" name="TALEND_CDC_TYPE" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tAggregateSortedRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="192">
+  <node componentName="tAggregateSortedRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateSortedRow_1"/>
     <elementParameter field="LABEL" name="NOTE" value="( Enter the accurate number of input rows )"/>
     <elementParameter field="TEXT" name="ROW_COUNT" value="38"/>
@@ -1250,7 +1250,7 @@
       <column comment="" defaultValue="" key="false" length="30" name="count" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1024" posY="192">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="992" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_2"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="// code sample:&#10;//&#10;// multiply by 2 the row identifier&#10;// output_row.id = input_row.id * 2;&#10;//&#10;// lowercase the name&#10;// output_row.name = input_row.name.toLowerCase();&#10;&#10;if(input_row.count==1)&#10;{&#10;context.Distinct++;&#10;System.out.println(context.Distinct);&#10;}&#10;else context.Distinct=0;&#10;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -2149,13 +2149,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c0a19422-33c1-4a19-9ed5-df0875c587b8"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>RAHt4c1j6RH1Y8KmotkgOs7ecbQrbmOvrjwUW9jWG1c7IiiUxv6OPT2aahCWc4NrMMwDlhJ3qrML
-bEjIobOGKQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0d77c86b-edb8-4b5a-9123-2d601f3b3c76"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4Wbfza9nGkr1pkQuuqnvTFcQh3Q43BukP8BvDJ/3g7Yh96+jl9+9TKszqMEDv8JBLZgBx4x3ILUl
-qnuTQlBweA==</DigestValue></Reference></SignedInfo><SignatureValue>NaNOYXzbVvvpdRq9BulopJen54+UC2SVoZBrmSDx43TfmWrbQD5/dFVcoURbPstb4RhYU/TnmM9t
-GB6y7LppjTAr88/LW+c3iT0x+Fei1IMnnMfanwXdAAl9kT9ulRkamXuNC0i2knzX+8MppCNkitwV
-ef0EPNsYm12i3JON43H27y8koE/MA9OqEnpRkuRKT2FGIBiFxwS4n/mYwDDX6fK8nrtRyVCzfRRD
-//EoS+Fg3fDC6ObiRYMb0M5sD06LF2pSe57APNDaQCqlUuTS4FBHCQhcnVqjZ3vloCX/v+hKVufq
-ptDrO2eHHWq7z4p+7oBhdV8H9v1NN7J13pW5kQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_81ce67b4-280a-4ed2-9b5a-3d1eaecce371"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>xfZhYy9HdBvfToWBzZuYFsqOQfy/PBhkkMhHMWM2wVWiwOceCoVySN+wTd8N0yW6tjLb/Lh1TcB3
+hGS4dTCltA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e584b6ec-b839-4023-b686-f30f91ef012c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>zoHdftbM+9WoerhxctH67ziHvMRI2qWOYS2GnZXrkx3LXrnaLzQ+UyZWd6CoIbfSjOY86Ox+gdhx
+pctFGHx5vw==</DigestValue></Reference></SignedInfo><SignatureValue>bvR6PN09hI/Lj2LmJyMOIz+gAQwmEpzl91+/W2PwRpmx4w2MLoK8npNyoiy7A1Vl7yurTl6dnQsz
+z97lkaQ9wsh2Ci/nyFgAW+p8JFehrXYv62WebYGKmEibO7SG9Z0Y5Efs1+8dxE4hNWO1eB5odCOF
+NYvDPXDvsiZ+NC99YeWRv4QHax53CG3Ko8JTWRU/OAOiZrWsCnpcArnd60IMP7RwpycqcKL7Pfe4
+u2yRdNKK/UArGjwFE071uIcq351v9xVqbR4/Nnvmed4nvo3OhYPuUQKrjhrATrjplKg4VEKtYKxa
+QaLkyaBq/p7jbNbrHP4r4HZ89J/SToewfk2MyA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -2179,4 +2179,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0d77c86b-edb8-4b5a-9123-2d601f3b3c76" Target="#_c0a19422-33c1-4a19-9ed5-df0875c587b8"><Timestamp>2018-11-26 09:12:48</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e584b6ec-b839-4023-b686-f30f91ef012c" Target="#_81ce67b4-280a-4ed2-9b5a-3d1eaecce371"><Timestamp>2018-11-26 09:12:52</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
