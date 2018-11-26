@@ -2452,7 +2452,7 @@
       <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="Audit_Log" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row7.DataMart_TableName " name="DataMart_TableName" nullable="true" type="id_String"/>
@@ -2592,7 +2592,6 @@
   </node>
   <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_g0gz8OcqEeiiipAD292gug"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -2614,7 +2613,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  ETLDUMP.Temp_Audit_Log.DataMart_TableName, &#10;  ETLDUMP.Temp_Audit_Log.Job_Name, &#10;  ETLDUMP.Temp_Audit_Log.Run_Date, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Records_fetched, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Distinct_Records, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Records_Inserted, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Records_Updated, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Records_Deleted&#10;FROM ETLDUMP.Temp_Audit_Log&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -2662,7 +2661,6 @@
   </node>
   <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_1"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="GROUPBYS">
       <elementValue elementRef="OUTPUT_COLUMN" value="DataMart_TableName"/>
       <elementValue elementRef="INPUT_COLUMN" value="DataMart_TableName"/>
@@ -2711,11 +2709,10 @@
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_jwkaYOlkEeiIi6N5Nql2yQ-tMap_4-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_LpbSUOt0EeiYUOUhHVfVFw-tMap_4-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -2735,12 +2732,12 @@
       <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="audit" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="StringHandling.RIGHT(row8.DataMart_TableName,6) " name="TableName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row8.Job_Name " name="Job_Name" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.Date " name="Run_Date" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.Run_Date" name="Run_Date" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row8.No_of_Records_fetched " name="No_of_Records_fetched" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row8.No_of_Distinct_Records " name="No_of_Distinct_Records" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row8.No_of_Records_Inserted " name="No_of_Records_Inserted" nullable="true" type="id_Integer"/>
@@ -2761,7 +2758,6 @@
   </node>
   <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_g0gz8OcqEeiiipAD292gug"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -3071,6 +3067,9 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="stat"/>
   </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tStatCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tStatCatcher_1" target="tDBInput_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
+  </connection>
   <connection connectorName="FLOW" label="AuditLog" lineStyle="0" metaname="AuditLog" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tFilterRow_7">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="AuditLog"/>
@@ -3089,7 +3088,6 @@
   </connection>
   <connection connectorName="FLOW" label="row9" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tAggregateRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row9"/>
   </connection>
   <connection connectorName="FLOW" label="row8" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tMap_4">
@@ -3105,7 +3103,6 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row8"/>
   </connection>
   <connection connectorName="FLOW" label="audit" lineStyle="0" metaname="audit" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tDBOutput_2">
@@ -3121,7 +3118,6 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="audit"/>
   </connection>
   <subjob>
@@ -3148,13 +3144,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e055be11-a3a6-4b14-b3d1-a4853c509c42"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8WHefgyE+lj/mxKBAmYF3wVUsP9Nxrke1Q9ohtB9yePb59wrdeiRila4g5ZVH58yoK3lwii7lxFi
-PUn84lGN3Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6dd011a7-da57-48ef-8fb7-95333ea8639b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>qwKAPW18LEXk6duWX9jUY8o2069SBypZ09oO7nIuWW6Nx7B3VDt6vLi39edm16qpx7qKd5humzrR
-45JbUcmTbQ==</DigestValue></Reference></SignedInfo><SignatureValue>xhXSgdm+halKMX+0t424K+XVkGzTE3FVCVxgPiAncd4F3spfBQDHWXDb7t0GDpuPrbVHVs6NMyQd
-ubndYdvesdKRgvpjDYxbhJJfx72BYaNOIiL/Nr6mcWMBxBFSp0pVco3JUNBsrwmYVrrOAreD+Icr
-YuNxx0qwRd+N+kE1AiN+i43l93Vgm09E0PuhDbyEkFzy9zHHreFZF9+U5GNsYbVw1KtyaugXCZOG
-QywhcAASPr85nUeXH2znbrLAuJSMSGke6EIFCiuMBRntvTzyolSiHrVttY0lGwNXADuRHPGGKbBF
-lnpN3NekQpFoeyxiCdVdAp6By6Ew5KeHNPsPsw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1d1b85b5-453f-4728-8161-3c423eaad3e5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZNuxwvty1UpmkWIqqMI45i73PHJuo6P2ZtY1bKSQLIj9OlBZjh8dSHjHOLWsR6+flNbmsYWxU+pS
+KgoEFpwdeQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f180b533-999e-4247-ab53-a0b641fa1cbd"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>iZ2V6huOVbfdq8VqkfYv2Dg0svxlHzgz/aY8SeD9G90Ng5cUKvPjVSVcvpydt5ZdshMu+9DoSvCZ
+X1/6fRPfpw==</DigestValue></Reference></SignedInfo><SignatureValue>cG0YRtA+ipuGUaQZxVB4Q1eW4Grt6AIrQXNUFIPaubPPZJupg+aK4bIQf8Mftpv3Pb71ZYfrFVpK
+Pi/lUk4YvwtvgaORzfaU13mXgkoQ2HH3POE1tChcZFOMmET6Soh/gzaJz2shiLseww+9yKD8J5o5
+hA5hrRMKjzLGGidr3GMrgVCq8vmg3mBjpoVKcmJkjUP5biHeAR4pgg+Oo089O35HNlWdtM3HTgY/
+HCVmVUwOyB0ut3ZKCUU77WxbnU0x+M3gA/Wa8hy2EhxJpdOLHzXpy6O1mD4zN1+96PnsGZjZ0Iat
+DE8NXgXlpc439/UgsyEqsDdVmlAjCZhe6eaZVA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -3178,4 +3174,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6dd011a7-da57-48ef-8fb7-95333ea8639b" Target="#_e055be11-a3a6-4b14-b3d1-a4853c509c42"><Timestamp>2018-11-26 05:28:10</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f180b533-999e-4247-ab53-a0b641fa1cbd" Target="#_1d1b85b5-453f-4728-8161-3c423eaad3e5"><Timestamp>2018-11-26 06:57:24</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
