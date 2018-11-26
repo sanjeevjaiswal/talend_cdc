@@ -2535,7 +2535,7 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="AuditLog" name="Audit_Log">
-      <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="false" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="false" length="10" name="Run_Date" nullable="true" originalLength="8" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -2548,7 +2548,7 @@
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="Audit_Log" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row7.DataMart_TableName " name="DataMart_TableName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.RIGHT(row7.DataMart_TableName,6) " name="TableName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row7.Job_Name " name="Job_Name" nullable="true" type="id_String"/>
         <mapperTableEntries expression="TalendDate.formatDate(&quot;yyyy-MM-dd&quot;,row7.Job_Start_Time) " name="Run_Date" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row7.No_of_Records_fetched " name="No_of_Records_fetched" nullable="true" type="id_Integer"/>
@@ -2590,7 +2590,7 @@
     <elementParameter field="TEXT" name="USER" value="&quot;etldump&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="MU4o14/72+SDdjsjJKRZfw=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;Temp_Audit_Log&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_CREATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
@@ -2607,7 +2607,7 @@
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="DataMart_TableName"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TableName"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -2661,7 +2661,7 @@
     <elementParameter field="TEXT" name="LABEL" value="&quot;Temp_Audit_Log&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="AuditLog" name="tDBOutput_4">
-      <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="10" name="Run_Date" nullable="true" originalLength="8" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -2671,7 +2671,7 @@
       <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="AuditLog" name="REJECT">
-      <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="10" name="Run_Date" nullable="true" originalLength="8" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -3193,13 +3193,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_48ab1fc2-184a-491b-b436-079b1b96f2a5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>glHJX0x7sQQEk27LqIf4c2uAzK6s5VZaYxwhd4NqP79h4JAnnnbdZ6aopk86gf0b84lR3lVWvf1C
-n6rFoD2ZkA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c9026ff7-4bce-4be5-b6fa-4ed8c5e212f5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>eZBK2d5gIECGH6eUD0zV6+FTkP9/+BLA34fHN6KpQnJXZL5G/dgg+kh91o1bVS8EFD0OdeTTi2tb
-dcQSX1Dtzg==</DigestValue></Reference></SignedInfo><SignatureValue>Zb3b4fCoFgnSF2x8g8sQ6brn92z2fDRKCBC0ZV9+36yG/6O50yKfVazbMCqvcM1td3IeMT1X/p6v
-noklRq8AhuV6Idiu1Slt8R8Ln+ruloa/N5Iw6TmT4WPFt6ghFvubFeOBZGdbu4+DmLi5w2mu64N2
-LYJweAUnYB2SAVinrtF5X5edGiv8ASx9zq75B0OO9VLjbBX3W+61zfFOEVGSpBiIp3P+JM2uw35b
-rCcwlZqwsSgdVFUaaQsYmi7suNAXKopjFe8B09d3ce3V7iil7sAUHXX/vNPY27Dn/e0ubP6TAfLf
-Qp1szhIosagShUT76DXFscpTHmTnLuLfznqg0g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_0b32e19e-8b09-4caa-abc0-e52b3fc1e0c0"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lnKNj+6Da2pC7PhVDOkZBIYTTEFl1+y16gp5OYgsArkc3d0b9JkSKWWT1Ael8KLlkGUA+9mYb7Jr
+bVSGSN+k7g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a48c611f-11b7-49cf-a2d3-89aa3976a73c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>q9sOmkzsjMiJoqA2uA1ZaOFFSM7xMkQtxdFPCYtn+gu0pRWkZtfdD16tRiGiLsOK9Z49fDurSWXb
+P6yn3sEXsw==</DigestValue></Reference></SignedInfo><SignatureValue>GOl+4rQX488dpJGGIuBHwPcLuLeKedk1DXUOiSxSt4csSKWnfqsqPrBdRmnKcIsopA8N9KPKBn7v
+ovwZcUNNnVERMvbnvSe4FHarwSy1OTunvo/i/7Cwpo8qWx0H7JUli496axRwPom7D6qcyuHaPndT
+VRZxRT3BRQcVpXl7Y+8nlQY3gK3oCu9bxDxBT7HO52dRUaNPLgA1DxMr0b/e5NgBrzjptu7ePwQh
+zPCwDmVuYyQAcjQR/PCI1IJuAj2LqTsyuYUyVvB8tzWVZehR/ktm7X5sFDmi2nA0bQhk4XUE3/3H
+3QdWGvKk+ks5MZ85TZUZlOe5ZkXrErfPzXBv7w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -3223,4 +3223,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c9026ff7-4bce-4be5-b6fa-4ed8c5e212f5" Target="#_48ab1fc2-184a-491b-b436-079b1b96f2a5"><Timestamp>2018-11-26 09:17:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a48c611f-11b7-49cf-a2d3-89aa3976a73c" Target="#_0b32e19e-8b09-4caa-abc0-e52b3fc1e0c0"><Timestamp>2018-11-26 10:00:34</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
