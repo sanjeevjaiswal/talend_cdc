@@ -3357,7 +3357,7 @@
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_szijQOtzEeiYUOUhHVfVFw-tMap_2-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_i8KdMOttEeiYUOUhHVfVFw-tMap_2-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -3380,7 +3380,7 @@
       <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="stat.duration==null?0:stat.duration.intValue() " name="duration" type="id_Integer"/>
       </varTables>
@@ -3605,7 +3605,7 @@
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_szijQOtzEeiYUOUhHVfVFw-tMap_3-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_qy6S0Ot0EeiYUOUhHVfVFw-tMap_3-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -3615,7 +3615,7 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="AuditLog" name="Audit_Log">
-      <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="false" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column key="false" length="10" name="Run_Date" nullable="true" originalLength="8" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -3625,10 +3625,10 @@
       <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="Audit_Log" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row7.DataMart_TableName " name="DataMart_TableName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.RIGHT(row7.DataMart_TableName,6) " name="TableName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row7.Job_Name " name="Job_Name" nullable="true" type="id_String"/>
         <mapperTableEntries expression="TalendDate.formatDate(&quot;yyyy-MM-dd&quot;,row7.Job_Start_Time) " name="Run_Date" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row7.No_of_Records_fetched " name="No_of_Records_fetched" nullable="true" type="id_Integer"/>
@@ -3653,7 +3653,7 @@
     </nodeData>
   </node>
   <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="320">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_4"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_g0gz8OcqEeiiipAD292gug"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -3687,7 +3687,7 @@
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="DataMart_TableName"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TableName"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -3740,8 +3740,8 @@
     <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
     <elementParameter field="TEXT" name="LABEL" value="&quot;Temp_Audit_Log&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="AuditLog" name="tDBOutput_4">
-      <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    <metadata connector="FLOW" label="AuditLog" name="tDBOutput_2">
+      <column comment="" key="false" length="255" name="TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="10" name="Run_Date" nullable="true" originalLength="8" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -3751,7 +3751,7 @@
       <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="AuditLog" name="REJECT">
-      <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="10" name="Run_Date" nullable="true" originalLength="8" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -3761,65 +3761,6 @@
       <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1056" posY="480">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputExcel_1"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="CHECK" name="VERSION_2007" value="true"/>
-    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
-    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;E:/Talend/Test/Temp_Audit_Log.xlsx&quot;"/>
-    <elementParameter field="TEXT" name="SHEETNAME" value="&quot;Sheet1&quot;"/>
-    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
-    <elementParameter field="CHECK" name="APPEND_FILE" value="true"/>
-    <elementParameter field="CHECK" name="APPEND_SHEET" value="true"/>
-    <elementParameter field="CHECK" name="FIRST_CELL_Y_ABSOLUTE" value="false"/>
-    <elementParameter field="TEXT" name="FIRST_CELL_X" show="false" value="0"/>
-    <elementParameter field="TEXT" name="FIRST_CELL_Y" show="false" value="0"/>
-    <elementParameter field="CHECK" name="KEEP_CELL_FORMATING" show="false" value="false"/>
-    <elementParameter field="CLOSED_LIST" name="FONT" value=""/>
-    <elementParameter field="CHECK" name="IS_ALL_AUTO_SZIE" value="false"/>
-    <elementParameter field="TABLE" name="AUTO_SZIE_SETTING">
-      <elementValue elementRef="SCHEMA_COLUMN" value="DataMart_TableName"/>
-      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Job_Name"/>
-      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Date"/>
-      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="No_of_Records_fetched"/>
-      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="No_of_Distinct_Records"/>
-      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="No_of_Records_Inserted"/>
-      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="No_of_Records_Updated"/>
-      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="No_of_Records_Deleted"/>
-      <elementValue elementRef="IS_AUTO_SIZE" value="false"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="CREATE" value="true"/>
-    <elementParameter field="CHECK" name="FLUSHONROW" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="100"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="','"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="'.'"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
-    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
-    <elementParameter field="CHECK" name="RECALCULATE_FORMULA" value="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
-    <elementParameter field="TEXT" name="LABEL" value="Temp_Audit_Log"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="AuditLog" name="tFileOutputExcel_1">
-      <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="false" length="8" name="Date" nullable="true" originalLength="8" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" originalLength="30" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="30" name="No_of_Records_Inserted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="No_of_Records_Updated" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="448">
@@ -3845,7 +3786,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  ETLDUMP.Temp_Audit_Log.DataMart_TableName, &#10;  ETLDUMP.Temp_Audit_Log.Job_Name, &#10;  ETLDUMP.Temp_Audit_Log.Run_Date, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Records_fetched, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Distinct_Records, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Records_Inserted, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Records_Updated, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Records_Deleted&#10;FROM ETLDUMP.Temp_Audit_Log&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  ETLDUMP.Temp_Audit_Log.TableName, &#10;  ETLDUMP.Temp_Audit_Log.Job_Name, &#10;  ETLDUMP.Temp_Audit_Log.Run_Date, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Records_fetched, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Distinct_Records, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Records_Inserted, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Records_Updated, &#10;  ETLDUMP.Temp_Audit_Log.No_of_Records_Deleted&#10;FROM ETLDUMP.Temp_Audit_Log&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -3860,7 +3801,7 @@
     <elementParameter field="TEXT" name="CURSOR_SIZE" show="false" value="1000"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="DataMart_TableName"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TableName"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Job_Name"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -3881,7 +3822,7 @@
     <elementParameter field="TEXT" name="LABEL" value="&quot;Temp_Audit_Log&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_1">
-      <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column key="false" length="10" name="Run_Date" nullable="true" originalLength="8" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -3894,8 +3835,8 @@
   <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tAggregateRow_1"/>
     <elementParameter field="TABLE" name="GROUPBYS">
-      <elementValue elementRef="OUTPUT_COLUMN" value="DataMart_TableName"/>
-      <elementValue elementRef="INPUT_COLUMN" value="DataMart_TableName"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="TableName"/>
+      <elementValue elementRef="INPUT_COLUMN" value="TableName"/>
       <elementValue elementRef="OUTPUT_COLUMN" value="Job_Name"/>
       <elementValue elementRef="INPUT_COLUMN" value="Job_Name"/>
       <elementValue elementRef="OUTPUT_COLUMN" value="Run_Date"/>
@@ -3929,67 +3870,18 @@
     <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tAggregateRow_1">
-      <column comment="" key="false" length="255" name="DataMart_TableName" nullable="true" originalLength="20" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column key="false" length="255" name="Job_Name" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column key="false" length="10" name="Run_Date" nullable="true" originalLength="8" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" originalLength="255" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="30" name="No_of_Records_Inserted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="No_of_Records_Updated" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="448">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
-    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_szijQOtzEeiYUOUhHVfVFw-tMap_4-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
-    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
-    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
-    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="audit">
-      <column comment="" key="true" length="255" name="TableName" nullable="true" pattern="" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="true" length="255" name="Job_Name" nullable="true" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column key="true" length="10" name="Run_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="TableName" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="Job_Name" nullable="true" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="Run_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" pattern="" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="30" name="No_of_Records_Inserted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_Updated" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
-    <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
-      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="audit" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="StringHandling.RIGHT(row8.DataMart_TableName,6) " name="TableName" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.Job_Name " name="Job_Name" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.Run_Date" name="Run_Date" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.No_of_Records_fetched " name="No_of_Records_fetched" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row8.No_of_Distinct_Records " name="No_of_Distinct_Records" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row8.No_of_Records_Inserted " name="No_of_Records_Inserted" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row8.No_of_Records_Updated " name="No_of_Records_Updated" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row8.No_of_Records_Deleted " name="No_of_Records_Deleted" nullable="true" type="id_Integer"/>
-      </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row8" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="DataMart_TableName" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Job_Name" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Run_Date" nullable="true" type="id_String"/>
-        <mapperTableEntries name="No_of_Records_fetched" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="No_of_Distinct_Records" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="No_of_Records_Inserted" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="No_of_Records_Updated" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="No_of_Records_Deleted" nullable="true" type="id_Integer"/>
-      </inputTables>
-    </nodeData>
   </node>
-  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="544" posY="448">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="416" posY="448">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_4"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_g0gz8OcqEeiiipAD292gug"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -4076,10 +3968,10 @@
     <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
     <elementParameter field="TEXT" name="LABEL" value="&quot;Audit_Log&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBOutput_2">
-      <column comment="" key="true" length="255" name="TableName" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column key="true" length="255" name="Job_Name" nullable="true" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column key="true" length="10" name="Run_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    <metadata connector="FLOW" name="tDBOutput_4">
+      <column comment="" key="true" length="255" name="TableName" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="true" length="255" name="Job_Name" nullable="false" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="true" length="10" name="Run_Date" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="30" name="No_of_Records_Inserted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -4087,9 +3979,9 @@
       <column comment="" key="false" length="30" name="No_of_Records_Deleted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="true" length="255" name="TableName" nullable="true" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column key="true" length="255" name="Job_Name" nullable="true" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column key="true" length="10" name="Run_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="true" length="255" name="TableName" nullable="false" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="true" length="255" name="Job_Name" nullable="false" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column key="true" length="10" name="Run_Date" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Records_fetched" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="30" name="No_of_Distinct_Records" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="30" name="No_of_Records_Inserted" nullable="true" originalLength="30" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
@@ -4231,43 +4123,22 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row7"/>
   </connection>
-  <connection connectorName="FLOW" label="Audit_Log" lineStyle="0" metaname="Audit_Log" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tDBOutput_4">
+  <connection connectorName="FLOW" label="Audit_Log" lineStyle="0" metaname="Audit_Log" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tDBOutput_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Audit_Log"/>
   </connection>
   <connection connectorName="FLOW" label="row9" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tAggregateRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="TableName"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row9"/>
   </connection>
-  <connection connectorName="FLOW" label="row8" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tMap_4">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="No_of_Records_Updated"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="No_of_Records_Deleted"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="No_of_Records_Inserted"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
+  <connection connectorName="FLOW" label="row8" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tDBOutput_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row8"/>
-  </connection>
-  <connection connectorName="FLOW" label="audit" lineStyle="0" metaname="audit" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tDBOutput_2">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="No_of_Records_Updated"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="No_of_Records_Deleted"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="No_of_Records_Inserted"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="audit"/>
   </connection>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
@@ -4280,12 +4151,7 @@
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tStatCatcher_1"/>
     <elementParameter field="TEXT" name="SUBJOB_TITLE" value="ETL_Audit_Log"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="79;198;255"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputExcel_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
@@ -4295,13 +4161,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_bae90ae9-5ac4-45cd-9462-f02c1f3cdb6a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pY7+JAmpCVcbzGT6GAqptvUODhg3g6JABeQy7m764YL6wg7l4o3Brhw/aEXRIQN1SOWpq5PaeCrf
-z0J3gBSf8A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bf4e1d59-c03d-446c-93c9-bd31a3ddc4d8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TerYk0NpM7IJpNnMzdDMh3suHNstfSfzorWcZx1/5vqPZl44S4oGDmUOsI7aaSlTGyjAT+Tqu7Xv
-kWbG1CzUPw==</DigestValue></Reference></SignedInfo><SignatureValue>qdpZHKMdi5n6q/DB89x9vRLQHE3+Nz/xewRlbiY4p7PBbe1q9gfsOFrGj7dkpHlOCkf5bcan9RR3
-nLVTniLLFLNXByCjyIH1VzKWbPe4LpGdIMpJ6yNjibHKZ/bVdXWQKa7aS0lgbztlke9YqUgwRTJW
-6lRRSJiWQttc4HDHMw6zoPr1CTwyOqOzmCqMhQzZGd7IfkbD+N3yx/wsX2jdocCaXF/IwmSd2bGc
-m9ndZZu7gWXiJtuqwCCs3NGxNRtQp1qGxs5OluqXdfma2in3kS7MaykvCCsWu/15IQmz41HxxkoU
-/OYxBnYXaosbb64tGCfAYbZgKfZUIlINXqwAHw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1dabfaad-8b17-4c90-803b-773921fd6d85"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fcVolJmwPW6qMTKnbjyOnX46mh3LY/J/bx6Or5kJ/1v2/Fx/iT/H6kYux2DqQiRg/pCodsM168k0
+tJo08OJmEA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f7434a3a-115d-4dbf-94b9-345c752a6857"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CUAmj7rQYeVyCVVJ5yoZF/mHo4sv8Y2iPGEFL1GEku+KRTXxeGpNFq7/iLyS9r3izU/TNeLHT9wU
+wnZ6oNYcCA==</DigestValue></Reference></SignedInfo><SignatureValue>SL45ecVz0L5tJR+rWYHc4CLLNBB5evwQ3qId8Di4uQKTIuURHNCUaj+0zN8GzPuvJnFAcpB6U15g
+nj4woT4U0H4QHVZ0SmjI56q531Ip3sUmKpkzRo0fiYQDRIA8boQMuaYAPoddFP7c764G4Ok6R6eE
+puRZeCMntUF3MAXFFt//cR0cbmMO/MDowFjRKCN8TLG21rHuXlQh+1aHj1c/LOgSuPNGFjaC7YAA
+Br/Hy7PvuM12KrM7OFmXfirVQ9GnEx7L2F60TrQtNosV8hkdUKI9zbQurufrS8drSylBM+ixYXk0
+fd3t0/QD1uhciOD0DmwsZVADDy5U77swPU8CtA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -4325,4 +4191,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bf4e1d59-c03d-446c-93c9-bd31a3ddc4d8" Target="#_bae90ae9-5ac4-45cd-9462-f02c1f3cdb6a"><Timestamp>2018-11-26 09:23:10</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f7434a3a-115d-4dbf-94b9-345c752a6857" Target="#_1dabfaad-8b17-4c90-803b-773921fd6d85"><Timestamp>2018-11-26 10:07:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
